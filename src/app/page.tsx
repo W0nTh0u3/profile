@@ -3,15 +3,17 @@ import Image from 'next/image';
 
 export default function Home() {
 	return (
-		<main className="flex min-h-screen flex-col">
+		<main className="flex min-h-[100dvh] flex-col">
 			<div className="h-24">
 				<Navbar direction="left" />
 			</div>
 			<div className="flex-grow flex items-center justify-center">
-				<img
+				<Image
 					src="/logo.png"
 					alt="Logo"
-					className="w-64 h-64 object-contain"
+					width={256}
+					height={256}
+					className="object-contain"
 				/>
 			</div>
 			<div className="h-24">
