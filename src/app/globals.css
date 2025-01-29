@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-    --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 214, 219, 220;
-    --background-end-rgb: 255, 255, 255;
+    --foreground-rgb: 255, 255, 255;
+    --gradient-end: 255, 0, 128;  /* Hot Pink */
+    --gradient-start: 0, 255, 255;    /* Cyan */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,9 +18,10 @@
 
 body {
     color: rgb(var(--foreground-rgb));
-    background: linear-gradient(to bottom,
-            transparent,
-            rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+    background: linear-gradient(to bottom right,
+            rgb(var(--gradient-start)),
+            rgb(var(--gradient-end)));
+    min-height: 100vh;
 }
 
 @layer utilities {
