@@ -5,19 +5,17 @@ export default function Home() {
 	return (
 		<main className="flex min-h-screen flex-col">
 			<div className="h-24">
-				<Navbar />
+				<Navbar direction="left" />
 			</div>
 			<div className="flex-grow flex items-center justify-center">
-				<Image 
+				<img
 					src="/logo.png"
 					alt="Logo"
-					width={256}
-					height={256}
-					className="object-contain"
+					className="w-64 h-64 object-contain"
 				/>
 			</div>
 			<div className="h-24">
-				<Navbar />
+				<Navbar direction="right" />
 			</div>
 		</main>
 	);
