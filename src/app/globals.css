@@ -21,7 +21,7 @@ body {
     background: linear-gradient(to bottom right,
             rgb(var(--gradient-start)),
             rgb(var(--gradient-end)));
-    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 @layer utilities {
