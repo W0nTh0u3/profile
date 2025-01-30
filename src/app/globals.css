@@ -21,8 +21,16 @@ body {
     background: linear-gradient(to bottom right,
             rgb(var(--gradient-start)),
             rgb(var(--gradient-end)));
-    min-height: 100dvh;
 }
+
+/* If you're using a gradient or pattern, add these properties */
+html {
+    background: linear-gradient(to bottom right,
+            rgb(var(--gradient-start)),
+            rgb(var(--gradient-end)));
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
 
 @layer utilities {
     .text-balance {
