@@ -18,7 +18,7 @@ export default function Home() {
 						height={256}
 						className="object-contain w-32 sm:w-40 md:w-48 lg:w-64 xl:w-72"
 					/>
-					<div className="text-white text-center md:text-left">
+					<div className="text-white text-center md:text-left fade-in">
 						<h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6">Hi, I&apos;m Ryan</h1>
 						<p className="text-lg md:text-xl lg:text-2xl max-w-2xl mb-4 md:mb-8">
 							<TypewriterEffect 
