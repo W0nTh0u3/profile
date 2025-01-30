@@ -4,8 +4,10 @@
 
 :root {
     --foreground-rgb: 255, 255, 255;
-    --gradient-end: 255, 0, 128;  /* Hot Pink */
-    --gradient-start: 0, 255, 255;    /* Cyan */
+    --gradient-end: 255, 0, 128;
+    /* Hot Pink */
+    --gradient-start: 0, 255, 255;
+    /* Cyan */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,7 +32,7 @@ html {
             rgb(var(--gradient-end)));
     min-height: 100dvh;
     overflow-x: hidden;
-  }
+}
 
 @layer utilities {
     .text-balance {
@@ -39,16 +41,17 @@ html {
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .fade-in {
-  animation: fadeIn 1s ease-out forwards;
+    animation: fadeIn 1s ease-out forwards;
 }
