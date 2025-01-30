@@ -13,6 +13,7 @@ const config: Config = {
                 'marquee2': 'marquee2 25s linear infinite',
                 'marquee-reverse': 'marquee-reverse 25s linear infinite',
                 'marquee2-reverse': 'marquee2-reverse 25s linear infinite',
+                'spin-slow': 'spin 3s linear infinite',
             },
             keyframes: {
                 marquee: {
@@ -31,6 +32,11 @@ const config: Config = {
                     '0%': { transform: 'translateX(-100%)' },
                     '100%': { transform: 'translateX(0%)' },
                 },
+                spin: {
+                    '0%': { transform: 'rotate(0deg) scale(1)' },
+                    '50%': { transform: 'rotate(180deg) scale(1.2)' },
+                    '100%': { transform: 'rotate(360deg) scale(1)' },
+                }
             },
         },
     },
