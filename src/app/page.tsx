@@ -109,6 +109,7 @@ export default function Home() {
 								<ul className="space-y-3 text-gray-300">
 									<li>📧 Email: resjverzo@gmail.com</li>
 									<li>📍 Location: Philippines</li>
+									<li>📱 Mobile: +63 976 020 8693</li>
 									<li>💼 Open to opportunities</li>
 								</ul>
 							</div>
@@ -124,7 +125,7 @@ export default function Home() {
 						</div>
 						<div className="mt-8 text-center">
 							<a 
-								href="/resume.pdf" 
+								href="/Ryan Verzo - Resume S2.pdf" 
 								target="_blank"
 								className="inline-block bg-gradient-to-r from-[rgb(var(--gradient-start))] to-[rgb(var(--gradient-end))] 
 									px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"

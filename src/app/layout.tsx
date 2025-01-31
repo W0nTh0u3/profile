@@ -5,12 +5,12 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "ResjVrz",
-	description: "ResjVrz",
+	title: "ResjVerzo | Portfolio",
+	description: "ResjVerzo | Portfolio",
 	icons: {
 		icon: [
+			{ url: '/logo.png', type: 'image/png' },
 			{ url: '/favicon.ico' },
-			{ url: '/logo.png', type: 'image/png' }
 		],
 		apple: [
 			{ url: '/logo.png' }
