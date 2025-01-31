@@ -75,7 +75,7 @@ export default function Home() {
 			</section>
 
 			{/* Portfolio intro section */}
-			<section className="min-h-[100dvh] bg-black text-white flex flex-col items-center justify-center p-6">
+			{/* <section className="min-h-[100dvh] bg-black text-white flex flex-col items-center justify-center p-6">
 				<h1 className="text-4xl sm:text-6xl font-bold mb-6">Hi, I&apos;m ResjVrz</h1>
 				<p className="text-xl sm:text-2xl text-center max-w-2xl mb-8">
 					<TypewriterEffect 
@@ -96,7 +96,7 @@ export default function Home() {
 						<p className="text-gray-300">Check out my latest works and experiments</p>
 					</div>
 				</div>
-			</section>
+			</section> */}
 		</main>
 	);
 }
