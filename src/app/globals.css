@@ -21,6 +21,9 @@ body {
     background: linear-gradient(to bottom right,
             rgb(var(--gradient-start)),
             rgb(var(--gradient-end)));
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
 }
 
 /* If you're using a gradient or pattern, add these properties */
@@ -29,6 +32,17 @@ html {
             rgb(var(--gradient-start)),
             rgb(var(--gradient-end)));
     min-height: 100dvh;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Prevent horizontal overflow */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+main {
     overflow-x: hidden;
 }
 
@@ -76,4 +90,57 @@ html {
 * {
     scrollbar-width: thin;
     scrollbar-color: #333 #0a0a0a;
+}
+
+/* Gradient Divider */
+.gradient-divider {
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(var(--gradient-start), 0.2),
+        rgba(var(--gradient-start), 1) 20%,
+        rgba(var(--gradient-end), 1) 80%,
+        rgba(var(--gradient-end), 0.2)
+    );
+    position: relative;
+    z-index: 10;
+}
+
+.gradient-divider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    animation: shine 3s ease-in-out infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Section Gradient Borders */
+.gradient-border-section {
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-image: linear-gradient(
+        90deg,
+        rgba(var(--gradient-start), 0.2),
+        rgba(var(--gradient-start), 1) 20%,
+        rgba(var(--gradient-end), 1) 80%,
+        rgba(var(--gradient-end), 0.2)
+    ) 1;
 }

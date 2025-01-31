@@ -38,7 +38,7 @@ export default function Home() {
 	}, []);
 
 	return (
-		<main className="flex flex-col">
+		<main className="flex flex-col h-screen overflow-y-auto">
 			{/* First section with logo */}
 			<section className="min-h-[100dvh] flex flex-col">
 				<div className="h-16 bg-black">
@@ -94,6 +94,44 @@ export default function Home() {
 							Beyond coding, I&apos;m an avid gamer and sneaker enthusiast. I believe in bringing 
 							creativity and attention to detail from these passions into my development work.
 						</p>
+					</div>
+				</div>
+			</section>
+
+			{/* Profile Details section */}
+			<section className="min-h-[100dvh] bg-black text-white flex flex-col items-center justify-center p-6">
+				<h1 className="text-4xl sm:text-6xl font-bold mb-8">Profile Details</h1>
+				<div className="max-w-4xl w-full space-y-6">
+					<div className="bg-white/10 p-8 rounded-lg">
+						<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+							<div>
+								<h2 className="text-2xl font-bold mb-4">Contact Information</h2>
+								<ul className="space-y-3 text-gray-300">
+									<li>📧 Email: resjverzo@gmail.com</li>
+									<li>📍 Location: Philippines</li>
+									<li>💼 Open to opportunities</li>
+								</ul>
+							</div>
+							<div>
+								<h2 className="text-2xl font-bold mb-4">Core Skills</h2>
+								<ul className="space-y-3 text-gray-300">
+									<li>• Angular Development</li>
+									<li>• Frontend Architecture</li>
+									<li>• Responsive Design</li>
+									<li>• UI/UX Implementation</li>
+								</ul>
+							</div>
+						</div>
+						<div className="mt-8 text-center">
+							<a 
+								href="/resume.pdf" 
+								target="_blank"
+								className="inline-block bg-gradient-to-r from-[rgb(var(--gradient-start))] to-[rgb(var(--gradient-end))] 
+									px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
+							>
+								View Resume
+							</a>
+						</div>
 					</div>
 				</div>
 			</section>
