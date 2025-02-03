@@ -4,8 +4,12 @@
 
 :root {
     --foreground-rgb: 255, 255, 255;
-    --gradient-end: 147, 0, 74;     /* Darker Pink */
-    --gradient-start: 0, 147, 147;   /* Darker Cyan */
+    --gradient-start-1: 0, 147, 147;   /* Darker Cyan */
+    --gradient-end-1: 147, 0, 74;     /* Darker Pink */
+    --gradient-start-2: 255, 32, 78; /* Radical Red */
+    --gradient-end-2: 160, 21, 62; /* Lipstick Red */
+    --gradient-start-3: 93, 14, 65; /* Tyrian Purple */
+    --gradient-end-3: 0, 34, 77; /* Sapphire */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,26 +20,6 @@
     }
 }
 
-body {
-    color: rgb(var(--foreground-rgb));
-    background: linear-gradient(to bottom right,
-            rgb(var(--gradient-start)),
-            rgb(var(--gradient-end)));
-    overflow-y: auto;
-    scroll-snap-type: y mandatory;
-    height: 100vh;
-}
-
-/* If you're using a gradient or pattern, add these properties */
-html {
-    background: linear-gradient(to bottom right,
-            rgb(var(--gradient-start)),
-            rgb(var(--gradient-end)));
-    min-height: 100dvh;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-}
-
 /* Prevent horizontal overflow */
 html, body {
     max-width: 100%;
@@ -44,28 +28,6 @@ html, body {
 
 main {
     overflow-x: hidden;
-}
-
-@layer utilities {
-    .text-balance {
-        text-wrap: balance;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.fade-in {
-    animation: fadeIn 1s ease-out forwards;
 }
 
 /* Modern dark scrollbar */
@@ -90,57 +52,4 @@ main {
 * {
     scrollbar-width: thin;
     scrollbar-color: #333 #0a0a0a;
-}
-
-/* Gradient Divider */
-.gradient-divider {
-    height: 4px;
-    width: 100%;
-    background: linear-gradient(
-        90deg,
-        rgba(var(--gradient-start), 0.2),
-        rgba(var(--gradient-start), 1) 20%,
-        rgba(var(--gradient-end), 1) 80%,
-        rgba(var(--gradient-end), 0.2)
-    );
-    position: relative;
-    z-index: 10;
-}
-
-.gradient-divider::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 200%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.4),
-        transparent
-    );
-    animation: shine 3s ease-in-out infinite;
-}
-
-@keyframes shine {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
-}
-
-/* Section Gradient Borders */
-.gradient-border-section {
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
-    border-image: linear-gradient(
-        90deg,
-        rgba(var(--gradient-start), 0.2),
-        rgba(var(--gradient-start), 1) 20%,
-        rgba(var(--gradient-end), 1) 80%,
-        rgba(var(--gradient-end), 0.2)
-    ) 1;
 }
