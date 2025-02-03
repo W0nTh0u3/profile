@@ -3,9 +3,9 @@ import { Navbar } from "../navbar/nav";
 import { TypewriterEffect } from "../TypewriterEffect";
 import Image from "next/image";
 import gsap from "gsap";
-import styles from './introsection.module.scss';
+import customBg from '../../styles/custom-bg.module.scss';
 
-export function IntroSection() {
+export function IntroSection({ bgNumber }: { bgNumber: string }) {
     const logoRef = useRef(null);
     const contentRef = useRef(null);
 
@@ -38,7 +38,7 @@ export function IntroSection() {
     }, []);
 
     return (
-        <section className={`min-h-[100dvh] flex flex-col ${styles['custom-bg-3']}`}>
+        <section className={`min-h-[100dvh] flex flex-col ${customBg[bgNumber]} bg-black`}>
             <div className="h-16 bg-black">
                 <Navbar direction="left" />
             </div>

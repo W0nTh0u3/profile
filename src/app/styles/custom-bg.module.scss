@@ -1,0 +1,17 @@
+.custom-bg-1 {
+    background: linear-gradient(to bottom right,
+            rgb(var(--gradient-start-1)),
+            rgb(var(--gradient-end-1)));
+}
+
+.custom-bg-2 {
+    background: linear-gradient(to bottom right,
+            rgb(var(--gradient-start-2)),
+            rgb(var(--gradient-end-2)));
+}
+
+.custom-bg-3 {
+    background: linear-gradient(to bottom right,
+            rgb(var(--gradient-start-3)),
+            rgb(var(--gradient-end-3)));
+}
