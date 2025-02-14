@@ -1,7 +1,7 @@
-import customBg from '../../styles/custom-bg.module.scss';
+import { darken } from '@/app/styles/colors';
 import SpotlightCard from '../SpotlightCard';
 
-export const ProfileDetails = ({ bgNumber }: { bgNumber: string }) => {
+export const ProfileDetails = ({ bgNumber }: { bgNumber: [string, string, string] }) => {
     return (
         <section className="min-h-[100dvh] bg-black text-white flex flex-col items-center justify-center p-6">
             <h1 className="text-4xl sm:text-6xl font-bold mb-8">Profile Details</h1>
@@ -31,7 +31,10 @@ export const ProfileDetails = ({ bgNumber }: { bgNumber: string }) => {
                         <a
                             href="/Ryan Verzo - Resume S2.pdf"
                             target="_blank"
-                            className={`inline-block px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity ${customBg[bgNumber]} bg-black`}
+                            className={`inline-block px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity bg-black`}
+                            style={{
+                                background: `linear-gradient(to right, ${darken(bgNumber[0])}, ${darken(bgNumber[1])}, ${darken(bgNumber[2])})`
+                            }}
                         >
                             View Resume
                         </a>

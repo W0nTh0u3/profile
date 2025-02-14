@@ -5,11 +5,12 @@ import { Footer } from "./components/Footer/Footer";
 import { IntroSection } from "./components/IntroSection/IntroSection";
 import { ProfileDetails } from "./components/ProfileDetails/ProfileDetails";
 import AnimatedContent from "./components/AnimatedContent";
+import { COLORS } from "./styles/colors"
 
 export default function Home() {
-	const [bgNumber, setNumber] = useState<number>(0);
-	const min = 1;
-	const max = 3;
+	const [number, setNumber] = useState<number>(0);
+	const min = 0;
+	const max = COLORS.length - 1;
 	const generateNumber = () => {
 		const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
 		setNumber(randomNum);
@@ -22,7 +23,7 @@ export default function Home() {
 	return (
 		<main className="flex flex-col h-screen overflow-y-auto">
 			{/* First section with logo */}
-			<IntroSection bgNumber={`custom-bg-${bgNumber}`} />
+			<IntroSection bgNumber={COLORS[number]} />
 			{/* About Me section */}
 			<AnimatedContent
 				distance={150}
@@ -47,7 +48,7 @@ export default function Home() {
 				scale={1.0}
 				threshold={0.1}
 			>
-				<ProfileDetails bgNumber={`custom-bg-${bgNumber}`} />
+				<ProfileDetails bgNumber={COLORS[number]} />
 			</AnimatedContent>
 			{/* Footer */}
 			<Footer />
