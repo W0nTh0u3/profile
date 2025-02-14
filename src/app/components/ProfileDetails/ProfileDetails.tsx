@@ -1,11 +1,12 @@
 import customBg from '../../styles/custom-bg.module.scss';
+import SpotlightCard from '../SpotlightCard';
 
 export const ProfileDetails = ({ bgNumber }: { bgNumber: string }) => {
     return (
         <section className="min-h-[100dvh] bg-black text-white flex flex-col items-center justify-center p-6">
             <h1 className="text-4xl sm:text-6xl font-bold mb-8">Profile Details</h1>
             <div className="max-w-4xl w-full space-y-6">
-                <div className="bg-white/10 p-8 rounded-lg">
+                <SpotlightCard className="bg-white/10 p-8 rounded-lg" spotlightColor="rgba(255, 255, 255, 0.2)">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <h2 className="text-2xl font-bold mb-4">Contact Information</h2>
@@ -35,7 +36,7 @@ export const ProfileDetails = ({ bgNumber }: { bgNumber: string }) => {
                             View Resume
                         </a>
                     </div>
-                </div>
+                </SpotlightCard>
             </div>
         </section>
     );
