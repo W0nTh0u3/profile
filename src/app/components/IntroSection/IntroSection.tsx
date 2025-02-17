@@ -6,7 +6,12 @@ import gsap from "gsap";
 import Aurora from "../Aurora";
 import RotatingText from "../FramerMotion";
 
-export function IntroSection({ bgNumber }: { bgNumber: [string, string, string] }) {
+interface IIntroSectionProps {
+    bgNumber: [string, string, string];
+    changeColor?: () => void; 
+}
+
+export function IntroSection({ bgNumber, changeColor }: IIntroSectionProps) {
     const logoRef = useRef(null);
     const contentRef = useRef(null);
 
@@ -52,6 +57,7 @@ export function IntroSection({ bgNumber }: { bgNumber: [string, string, string] 
                             width={256}
                             height={256}
                             className="object-contain w-32 sm:w-40 md:w-48 lg:w-64 xl:w-72"
+                            onClick={changeColor}
                         />
                     </div>
                     <div ref={contentRef} style={{ opacity: 0 }} className="text-white text-center md:text-left">

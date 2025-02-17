@@ -6,6 +6,7 @@ import { IntroSection } from "./components/IntroSection/IntroSection";
 import { ProfileDetails } from "./components/ProfileDetails/ProfileDetails";
 import AnimatedContent from "./components/AnimatedContent";
 import { COLORS } from "./styles/colors"
+import { RandomButton } from "./components/RandomButton";
 
 export default function Home() {
 	const [number, setNumber] = useState<number>(0);
@@ -23,7 +24,7 @@ export default function Home() {
 	return (
 		<main className="flex flex-col h-screen overflow-y-auto">
 			{/* First section with logo */}
-			<IntroSection bgNumber={COLORS[number]} />
+			<IntroSection bgNumber={COLORS[number]} changeColor={generateNumber}/>
 			{/* About Me section */}
 			<AnimatedContent
 				distance={150}
