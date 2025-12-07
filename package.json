@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
-    "@react-spring/web": "^9.7.5",
+    "@react-spring/web": "^10.0.3",
     "chroma-js": "^3.1.2",
     "framer-motion": "^12.4.2",
     "gsap": "^3.12.7",
