@@ -29,7 +29,7 @@ export const ProfileDetails = ({ bgNumber }: { bgNumber: [string, string, string
                     </div>
                     <div className="mt-8 text-center">
                         <a
-                            href="/Ryan Verzo - Resume 052025.pdf"
+                            href="/Ryan Verzo - Resume FE 2025-08.pdf"
                             target="_blank"
                             className={`inline-block px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity bg-black`}
                             style={{

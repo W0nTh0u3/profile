@@ -210,6 +210,6 @@ export default function Aurora(props: AuroraProps) {
     }, [amplitude, colorStops]);
 
     return (
-        <div ref={ctnDom} className={`w-full h-full ${className}`}/>
+        <div ref={ctnDom} className={`w-full h-full bg-black ${className}`}/>
     );
 }
