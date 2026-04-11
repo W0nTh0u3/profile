@@ -1,6 +1,8 @@
 import { darken } from '@/app/styles/colors';
 import SpotlightCard from '../SpotlightCard';
 
+const RESUME_NAME: string = 'Ryan Verzo - Resume FSE 2026-04';
+
 export const ProfileDetails = ({ bgNumber }: { bgNumber: [string, string, string] }) => {
     return (
         <section className="min-h-[100dvh] bg-black text-white flex flex-col items-center justify-center p-6">
@@ -29,7 +31,7 @@ export const ProfileDetails = ({ bgNumber }: { bgNumber: [string, string, string
                     </div>
                     <div className="mt-8 text-center">
                         <a
-                            href="/Ryan Verzo - Resume FSE 2026-01.pdf"
+                            href={`/${RESUME_NAME}.pdf`}
                             target="_blank"
                             className={`inline-block px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity bg-black`}
                             style={{
