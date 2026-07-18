@@ -1,0 +1,340 @@
+.hero {
+    background: var(--ink);
+    color: var(--paper);
+    min-height: 100svh;
+    overflow: hidden;
+    padding: 0 3.2vw;
+    perspective: 1100px;
+    position: relative;
+}
+
+.siteNav {
+    align-items: center;
+    display: flex;
+    height: 90px;
+    justify-content: space-between;
+    position: relative;
+    z-index: 3;
+}
+
+.brand {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 9px;
+}
+
+.brand img {
+    height: 35px;
+    object-fit: contain;
+    width: 35px;
+}
+
+.brand span {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.brand sup {
+    color: var(--lime);
+    font-size: 7px;
+    margin-left: 2px;
+}
+
+.navLinks {
+    align-items: stretch;
+    align-self: stretch;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 28px;
+    font-size: 11px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+.navLinks a {
+    align-items: center;
+    display: inline-flex;
+    line-height: 1;
+    padding-bottom: 3px;
+    position: relative;
+    transition: border-color .25s;
+    white-space: nowrap;
+}
+
+.navLinks a::after {
+    background: var(--lime);
+    bottom: 0;
+    content: '';
+    height: 1px;
+    left: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease-out;
+    width: 100%;
+}
+
+.navLinks a:hover::after {
+    transform: scaleX(1);
+}
+
+.navLinks svg {
+    align-items: center;
+    color: var(--lime);
+    display: inline-flex;
+    height: 15px;
+    line-height: 1;
+    margin-left: 2px;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    width: 15px;
+}
+
+.heroGrid {
+    background-image: linear-gradient(color-mix(in srgb, var(--aqua) 12%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--aqua) 12%, transparent) 1px, transparent 1px);
+    background-size: 8.333% 100%, 100% 8.333%;
+    inset: 90px 3.2vw 0;
+    pointer-events: none;
+    position: absolute;
+}
+
+.heroCopy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100svh - 90px);
+    padding-bottom: 8vh;
+    position: relative;
+    z-index: 2;
+}
+
+.eyebrow {
+    align-items: center;
+    display: flex;
+    font-size: 10px;
+    gap: 9px;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+}
+
+.eyebrow span {
+    background: var(--lime);
+    border-radius: 50%;
+    height: 6px;
+    width: 6px;
+}
+
+.hero h1 {
+    font-size: clamp(4.7rem, 11.6vw, 12.5rem);
+    font-weight: 800;
+    letter-spacing: -.09em;
+    line-height: .79;
+    margin: 6vh 0 7vh;
+    max-width: 1200px;
+}
+
+.hero h1 span {
+    display: block;
+}
+
+.italicLine {
+    color: var(--lime);
+    font-family: Georgia, serif;
+    font-size: .98em;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -.11em;
+    margin-left: 14vw;
+}
+
+.limeDot {
+    color: var(--lime);
+    display: inline !important;
+}
+
+.introRole {
+    color: var(--lime);
+    font-size: clamp(1.4rem, 2.4vw, 2.8rem);
+    font-weight: 700;
+    height: 1.15em;
+    letter-spacing: -.06em;
+    margin: -4vh 0 5vh 14vw;
+    overflow: hidden;
+}
+
+.introRole p {
+    margin: 0;
+}
+
+.heroBottom {
+    align-items: end;
+    display: flex;
+    justify-content: space-between;
+    max-width: 780px;
+}
+
+.heroBottomMinimal {
+    justify-content: flex-end;
+}
+
+.roundArrow {
+    align-items: center;
+    border: 1px solid rgba(237, 238, 229, .5);
+    border-radius: 50%;
+    display: flex;
+    font-size: 25px;
+    height: 62px;
+    justify-content: center;
+    transition: background .25s, color .25s;
+    width: 62px;
+}
+
+.roundArrow:hover {
+    background: var(--lime);
+    color: var(--ink);
+}
+
+.roundArrow svg {
+    height: 24px;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    width: 24px;
+}
+
+.heroIndex {
+    bottom: 34px;
+    font-size: 10px;
+    letter-spacing: .12em;
+    position: absolute;
+    right: 3.2vw;
+}
+
+.heroStamp {
+    align-items: center;
+    border: 1px solid rgba(237, 238, 229, .35);
+    border-radius: 50%;
+    bottom: -47px;
+    display: flex;
+    height: 135px;
+    justify-content: center;
+    position: absolute;
+    right: 12vw;
+    transform: rotate(-16deg);
+    width: 135px;
+}
+
+.heroStamp span {
+    font-size: 8px;
+    letter-spacing: 3px;
+    line-height: 1.5;
+    max-width: 95px;
+    text-align: center;
+}
+
+.heroStamp svg {
+    color: var(--lime);
+    fill: currentColor;
+    height: 20px;
+    position: absolute;
+    width: 20px;
+}
+
+.heroOrbit {
+    border: 1px solid color-mix(in srgb, var(--lime) 65%, transparent);
+    border-radius: 50%;
+    pointer-events: none;
+    position: absolute;
+}
+
+.orbitOne {
+    box-shadow: 0 0 80px color-mix(in srgb, var(--violet) 18%, transparent);
+    height: 55vw;
+    right: -13vw;
+    top: 12vh;
+    width: 55vw;
+}
+
+.orbitTwo {
+    border-color: color-mix(in srgb, var(--aqua) 42%, transparent);
+    height: 25vw;
+    right: 8vw;
+    top: 26vh;
+    width: 25vw;
+}
+
+@media (max-width: 720px) {
+    .hero {
+        padding: 0 20px;
+    }
+
+    .siteNav {
+        gap: 14px;
+        height: 70px;
+    }
+
+    .brand img {
+        height: 29px;
+        width: 29px;
+    }
+
+    .brand span {
+        display: none;
+    }
+
+    .navLinks {
+        font-size: 9px;
+        gap: 14px;
+        margin-left: auto;
+    }
+
+    .heroGrid {
+        background-size: 25% 100%, 100% 12.5%;
+        inset: 70px 20px 0;
+    }
+
+    .heroCopy {
+        min-height: calc(100svh - 70px);
+    }
+
+    .hero h1 {
+        font-size: clamp(4.35rem, 20vw, 7.4rem);
+        margin: 10vh 0 8vh;
+    }
+
+    .italicLine,
+    .introRole {
+        margin-left: 9vw;
+    }
+
+    .heroBottom {
+        align-items: end;
+        gap: 20px;
+    }
+
+    .roundArrow {
+        flex: 0 0 auto;
+        height: 48px;
+        width: 48px;
+    }
+
+    .heroStamp {
+        display: none;
+    }
+
+    .orbitOne {
+        height: 95vw;
+        right: -40vw;
+        top: 14vh;
+        width: 95vw;
+    }
+
+    .orbitTwo {
+        height: 48vw;
+        right: 6vw;
+        top: 30vh;
+        width: 48vw;
+    }
+}

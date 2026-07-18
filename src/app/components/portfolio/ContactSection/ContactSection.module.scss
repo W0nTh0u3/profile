@@ -1,0 +1,115 @@
+.contact {
+    background: linear-gradient(135deg, var(--violet), var(--lime) 58%, #ff9cda);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100svh;
+    padding: 25px 3.2vw 30px;
+}
+
+.contactTop,
+.contactFooter {
+    display: flex;
+    font-size: 10px;
+    justify-content: space-between;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+}
+
+.contactTop p {
+    margin: 0;
+}
+
+.contactPretitle {
+    font-size: clamp(17px, 1.7vw, 25px);
+    margin: 0 0 5px;
+}
+
+.contactLink {
+    display: inline-block;
+    font-size: clamp(3.4rem, 10vw, 12rem);
+    font-weight: 800;
+    letter-spacing: -.1em;
+    line-height: .8;
+    transition: letter-spacing .3s;
+}
+
+.contactLink:hover {
+    letter-spacing: -.06em;
+}
+
+.contactLink svg {
+    display: inline-block;
+    height: .8em;
+    margin-left: .08em;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    vertical-align: -.05em;
+    width: .8em;
+}
+
+.contactFooter {
+    border-top: 1px solid var(--ink);
+    gap: 16px;
+    padding-top: 13px;
+}
+
+.contactFooter a {
+    align-items: center;
+    display: inline-flex;
+    padding-bottom: 3px;
+    position: relative;
+    transition: transform .2s;
+}
+
+.contactFooter a::after {
+    background: var(--ink);
+    bottom: 0;
+    content: '';
+    height: 1px;
+    left: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease-out;
+    width: 100%;
+}
+
+.contactFooter a:hover {
+    transform: translateY(-3px);
+}
+
+.contactFooter a:hover::after {
+    transform: scaleX(1);
+}
+
+.contactFooter span {
+    align-items: center;
+    display: inline-flex;
+    margin-left: auto;
+}
+
+.contactFooter svg {
+    height: 1em;
+    margin-left: 5px;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    vertical-align: middle;
+    width: 1em;
+}
+
+@media (max-width: 720px) {
+    .contact {
+        min-height: 78svh;
+        padding: 20px;
+    }
+
+    .contactFooter {
+        flex-wrap: wrap;
+        gap: 12px 18px;
+    }
+
+    .contactFooter span {
+        display: none;
+    }
+}

@@ -1,0 +1,136 @@
+.work {
+    background: var(--ink);
+    color: var(--paper);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100svh;
+    padding: 5vw 7.5vw;
+}
+
+.sectionHeading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sectionLabel {
+    font-size: 10px;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+}
+
+.sectionHeading h2 {
+    font-size: clamp(3rem, 7vw, 8rem);
+    font-weight: 700;
+    letter-spacing: -.08em;
+    line-height: .86;
+    margin: 0;
+    text-align: right;
+}
+
+.sectionHeading em {
+    color: var(--lime);
+    font-family: Georgia, serif;
+    font-weight: 400;
+}
+
+.workList {
+    margin-top: 9vw;
+}
+
+.workItem {
+    border-top: 1px solid #4a4b46;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: .7fr 1.4fr 1.25fr .8fr;
+    padding: 30px 0 34px;
+}
+
+.workItem:last-child {
+    border-bottom: 1px solid #4a4b46;
+}
+
+.workMeta {
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    justify-content: space-between;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.workMain h3 {
+    font-size: clamp(1.7rem, 2.8vw, 3.5rem);
+    letter-spacing: -.065em;
+    line-height: .9;
+    margin: 0 0 10px;
+}
+
+.workMain p {
+    color: var(--lime);
+    font-size: 12px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.workDetail {
+    font-size: 15px;
+    line-height: 1.4;
+    margin: 0;
+    max-width: 300px;
+}
+
+.workTags {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.workTags span {
+    color: #a5a69e;
+    font-size: 11px;
+}
+
+@media (max-width: 720px) {
+    .work {
+        padding: 85px 20px;
+    }
+
+    .sectionHeading {
+        display: block;
+    }
+
+    .sectionHeading h2 {
+        margin-top: 35px;
+        text-align: left;
+    }
+
+    .workList {
+        margin-top: 65px;
+        text-align: left;
+    }
+
+    .workItem {
+        gap: 17px;
+        grid-template-columns: 1fr auto;
+    }
+
+    .workMeta {
+        flex-direction: row;
+        grid-column: 1 / 3;
+    }
+
+    .workDetail,
+    .workTags {
+        grid-column: 1 / 3;
+    }
+
+    .workTags {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .workTags span:not(:last-child)::after {
+        content: ' /';
+    }
+}

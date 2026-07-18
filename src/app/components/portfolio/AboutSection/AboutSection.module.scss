@@ -1,0 +1,102 @@
+.statement {
+    background: var(--paper);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100svh;
+    overflow: hidden;
+    padding: 5vw 7.5vw;
+}
+
+.sectionLabel {
+    font-size: 10px;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+}
+
+.statementCopy {
+    display: grid;
+    gap: 8vw;
+    grid-template-columns: 1.45fr .55fr;
+    margin: 11vw 0 10vw;
+}
+
+.statementCopy>p:first-child {
+    font-size: clamp(2.7rem, 6vw, 7.5rem);
+    font-weight: 700;
+    letter-spacing: -.075em;
+    line-height: .94;
+    margin: 0;
+}
+
+.statementCopy em {
+    font-family: Georgia, serif;
+    font-weight: 400;
+}
+
+.statementAside {
+    align-self: end;
+    font-size: clamp(16px, 1.4vw, 21px);
+    line-height: 1.35;
+    margin: 0;
+    max-width: 310px;
+}
+
+.statementQuote {
+    border-left: 3px solid var(--lime);
+    font-family: Georgia, serif;
+    font-size: clamp(1.35rem, 2.1vw, 2.6rem);
+    font-style: italic;
+    line-height: 1.15;
+    margin: 0 0 7vw auto;
+    max-width: 660px;
+    padding-left: 24px;
+}
+
+.marquee {
+    border-bottom: 1px solid #b5b6ae;
+    border-top: 1px solid #b5b6ae;
+    margin: 0 -7.5vw;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee div {
+    animation: marquee 24s linear infinite;
+    font-size: clamp(2.3rem, 5vw, 6rem);
+    font-weight: 700;
+    letter-spacing: -.06em;
+    padding: 14px 0;
+    width: max-content;
+}
+
+.marquee svg {
+    color: var(--aqua);
+    display: inline-block;
+    fill: currentColor;
+    height: .65em;
+    margin: 0 .2em;
+    vertical-align: -.05em;
+    width: .65em;
+}
+
+@keyframes marquee {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 720px) {
+    .statement {
+        padding: 85px 20px;
+    }
+
+    .statementCopy {
+        display: block;
+        margin: 70px 0;
+    }
+
+    .statementAside {
+        margin-top: 35px;
+    }
+}

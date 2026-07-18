@@ -1,0 +1,23 @@
+.stage {
+    height: clamp(300px, 44vw, 620px);
+    pointer-events: none;
+    position: absolute;
+    right: -3vw;
+    top: 20vh;
+    width: clamp(300px, 44vw, 620px);
+    z-index: 1;
+}
+
+.stage canvas {
+    height: 100%;
+    width: 100%;
+}
+
+@media (max-width: 720px) {
+    .stage {
+        height: 90vw;
+        right: -24vw;
+        top: 25vh;
+        width: 90vw;
+    }
+}

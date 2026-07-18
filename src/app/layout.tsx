@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import "./components/portfolio/portfolio.scss";
 
 export const metadata: Metadata = {
-	title: "ResjVerzo | Portfolio",
-	description: "ResjVerzo | Portfolio",
+	title: "Ryan Verzo | Software Engineer",
+	description: "Ryan Verzo is a full-stack software engineer building resilient digital products.",
 	icons: {
 		icon: [
 			{ url: '/logo.png', type: 'image/png' },

@@ -1,0 +1,10 @@
+.progress {
+    background: var(--aqua);
+    height: 4px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    transform-origin: left;
+    width: 100%;
+    z-index: 20;
+}
