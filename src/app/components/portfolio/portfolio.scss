@@ -43,6 +43,24 @@
     --muted: #a5b8aa;
 }
 
+:root[data-theme='crimson-pulse'] {
+    --ink: #20090f;
+    --paper: #fff1ef;
+    --lime: #ff3b4e;
+    --aqua: #ffb703;
+    --violet: #6c2bd9;
+    --muted: #d1a4aa;
+}
+
+:root[data-theme='electric-blue'] {
+    --ink: #06142e;
+    --paper: #edf6ff;
+    --lime: #318cff;
+    --aqua: #63f2ff;
+    --violet: #3458db;
+    --muted: #a6bddb;
+}
+
 * {
     box-sizing: border-box;
     scrollbar-color: var(--lime) var(--ink);
