@@ -1,11 +1,17 @@
 .stage {
+    cursor: grab;
     height: clamp(300px, 44vw, 620px);
-    pointer-events: none;
+    pointer-events: auto;
     position: absolute;
     right: -3vw;
     top: 20vh;
+    touch-action: pan-y;
     width: clamp(300px, 44vw, 620px);
     z-index: 1;
+}
+
+.dragging {
+    cursor: grabbing;
 }
 
 .stage canvas {

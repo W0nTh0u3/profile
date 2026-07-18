@@ -107,6 +107,7 @@
     justify-content: center;
     min-height: calc(100svh - 90px);
     padding-bottom: 8vh;
+    pointer-events: none;
     position: relative;
     z-index: 2;
 }
@@ -174,6 +175,7 @@
     display: flex;
     justify-content: space-between;
     max-width: 780px;
+    pointer-events: auto;
 }
 
 .heroBottomMinimal {
