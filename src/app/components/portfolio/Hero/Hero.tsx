@@ -12,12 +12,45 @@ export function Hero() {
     const { scrollYProgress } = useScroll();
     const orbitY = useTransform(scrollYProgress, [0, 1], [0, -190]);
     const [roleIndex, setRoleIndex] = useState(0);
+    const [isNameGlitching, setIsNameGlitching] = useState(false);
+    const [isGamerName, setIsGamerName] = useState(false);
     const roles = ['A Developer', 'A Gamer', 'A Sneakerhead'];
 
     useEffect(() => {
         const intervalId = window.setInterval(() => setRoleIndex((index) => (index + 1) % roles.length), 3000);
         return () => window.clearInterval(intervalId);
     }, [roles.length]);
+
+    useEffect(() => {
+        const timeoutIds = new Set<number>();
+        const schedule = (callback: () => void, delay: number) => {
+            const timeoutId = window.setTimeout(() => {
+                timeoutIds.delete(timeoutId);
+                callback();
+            }, delay);
+            timeoutIds.add(timeoutId);
+        };
+        const runCycle = () => {
+            setIsNameGlitching(false);
+            setIsGamerName(false);
+            schedule(() => setIsNameGlitching(true), 1100);
+            schedule(() => {
+                setIsNameGlitching(false);
+                setIsGamerName(true);
+            }, 1700);
+            schedule(() => {
+                setIsGamerName(false);
+                setIsNameGlitching(true);
+            }, 5200);
+            schedule(() => {
+                setIsNameGlitching(false);
+                runCycle();
+            }, 5800);
+        };
+
+        runCycle();
+        return () => timeoutIds.forEach((timeoutId) => window.clearTimeout(timeoutId));
+    }, []);
 
     return (
         <section className={styles.hero} id="top" data-cursor-surface="dark">
@@ -37,7 +70,13 @@ export function Hero() {
             <LogoScene />
             <div className={styles.heroCopy}>
                 <motion.p className={styles.eyebrow} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>Manila, Philippines <span /> Available for thoughtful work</motion.p>
-                <motion.h1 initial="hidden" animate="visible" transition={{ staggerChildren: 0.12, delayChildren: 0.22 }}><motion.span variants={reveal}>Hi, I&apos;m</motion.span><motion.span variants={reveal} className={styles.italicLine}>Ryan<span className={styles.limeDot}>.</span></motion.span></motion.h1>
+                <motion.h1 initial="hidden" animate="visible" transition={{ staggerChildren: 0.12, delayChildren: 0.22 }}>
+                    <motion.span variants={reveal}>Hi, I&apos;m</motion.span>
+                    <motion.span variants={reveal} className={`${styles.italicLine} ${styles.nameLockup}`}>
+                        <span className={`${styles.serifName} ${isNameGlitching ? styles.nameGlitch : ''} ${isGamerName ? styles.serifNameHidden : ''}`} data-text="RYAN">Ryan<span className={styles.limeDot}>.</span></span>
+                        <span className={`${styles.gamerName} ${isGamerName ? styles.gamerNameVisible : ''}`}>RYAN.</span>
+                    </motion.span>
+                </motion.h1>
                 <div className={styles.introRole} aria-live="polite"><AnimatePresence mode="wait"><motion.p key={roles[roleIndex]} initial={{ opacity: 0, y: '100%' }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: '-100%' }} transition={{ type: 'spring', damping: 24, stiffness: 260 }}>{roles[roleIndex]}</motion.p></AnimatePresence></div>
                 <motion.div className={`${styles.heroBottom} ${styles.heroBottomMinimal}`} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.75 }}><button type="button" className={styles.roundArrow} aria-label="Explore selected work" onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}><ArrowDownIcon /></button></motion.div>
             </div>

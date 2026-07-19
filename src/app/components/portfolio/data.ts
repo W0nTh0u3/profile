@@ -81,3 +81,6 @@ export const toolkit = [
   ["Figma", ""],
   ["Web performance", "massive"],
 ] as const;
+
+// One or more items work; three or more keeps the marquee visually full on wide screens.
+export const marqueeItems = ['Design minded', 'Code first', 'Human centered'] as const;

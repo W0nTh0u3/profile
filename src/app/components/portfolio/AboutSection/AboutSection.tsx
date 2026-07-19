@@ -1,7 +1,8 @@
 'use client';
 
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
+import { marqueeItems } from '../data';
 import { reveal } from '../motion';
 import { SparkIcon } from '../icons';
 import FaceVector from './face-vector.svg';
@@ -63,7 +64,13 @@ export function AboutSection() {
                 “Full-stack software engineer building considered, resilient products from interface to infrastructure.”
             </motion.blockquote>
             <div className={styles.marquee} aria-hidden="true">
-                <div>DESIGN MINDED <SparkIcon /> CODE FIRST <SparkIcon /> HUMAN CENTERED <SparkIcon /> DESIGN MINDED <SparkIcon /> CODE FIRST <SparkIcon /> HUMAN CENTERED <SparkIcon /></div>
+                <div>
+                    {[...marqueeItems, ...marqueeItems].map((item, index) => (
+                        <Fragment key={`${item}-${index}`}>
+                            {item} <SparkIcon />
+                        </Fragment>
+                    ))}
+                </div>
             </div>
         </section>
     );
