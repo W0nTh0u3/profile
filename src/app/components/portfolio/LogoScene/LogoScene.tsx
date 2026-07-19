@@ -3,7 +3,7 @@
 import { useGLTF } from '@react-three/drei';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Suspense, useEffect, useMemo, useRef, useState } from 'react';
-import { MathUtils, MeshStandardMaterial } from 'three';
+import { Box3, MathUtils, MeshStandardMaterial, Vector3 } from 'three';
 import type { Group, Mesh } from 'three';
 import { themePalettes, type ThemeName } from '../data';
 import styles from './LogoScene.module.scss';
@@ -17,7 +17,7 @@ function updateMaterial(material: MeshStandardMaterial, color: string) {
     material.needsUpdate = true;
 }
 
-function LogoModel({ palette, spinOffset, spinVelocity, dragging, resetRequested, onReady }: { palette: ThemePalette; spinOffset: React.RefObject<number>; spinVelocity: React.RefObject<number>; dragging: React.RefObject<boolean>; resetRequested: React.RefObject<boolean>; onReady: () => void }) {
+function LogoModel({ palette, spinOffset, spinVelocity, dragging, resetRequested, onReady, scale }: { palette: ThemePalette; spinOffset: React.RefObject<number>; spinVelocity: React.RefObject<number>; dragging: React.RefObject<boolean>; resetRequested: React.RefObject<boolean>; onReady: () => void; scale: number }) {
     const groupRef = useRef<Group>(null);
     const { scene } = useGLTF('/logo-3d.glb');
     const model = useMemo(() => {
@@ -29,6 +29,8 @@ function LogoModel({ palette, spinOffset, spinVelocity, dragging, resetRequested
             mesh.geometry = mesh.geometry.clone();
             mesh.material = new MeshStandardMaterial({ metalness: .25, roughness: .45 });
         });
+        const center = new Box3().setFromObject(clone).getCenter(new Vector3());
+        clone.position.sub(center);
         return clone;
     }, [scene]);
 
@@ -63,13 +65,14 @@ function LogoModel({ palette, spinOffset, spinVelocity, dragging, resetRequested
         groupRef.current.position.y = progress * 0.6;
     });
 
-    return <primitive ref={groupRef} object={model} scale={0.75} />;
+    return <primitive ref={groupRef} object={model} scale={scale} />;
 }
 
 export function LogoScene() {
     const [theme, setTheme] = useState<ThemeName>('miami-vice');
     const [dragging, setDragging] = useState(false);
     const [isReady, setIsReady] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
     const palette = themePalettes[theme];
     const dragStartX = useRef<number | null>(null);
     const dragMoveTime = useRef(0);
@@ -86,6 +89,14 @@ export function LogoScene() {
         const handleThemeChange = (event: Event) => setTheme((event as CustomEvent<ThemeName>).detail);
         window.addEventListener('portfolio-theme-change', handleThemeChange);
         return () => window.removeEventListener('portfolio-theme-change', handleThemeChange);
+    }, []);
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia('(max-width: 720px)');
+        const updateViewport = () => setIsMobile(mediaQuery.matches);
+        updateViewport();
+        mediaQuery.addEventListener('change', updateViewport);
+        return () => mediaQuery.removeEventListener('change', updateViewport);
     }, []);
 
     useEffect(() => () => window.clearTimeout(resetTimer.current), []);
@@ -138,14 +149,14 @@ export function LogoScene() {
             onPointerUp={finishDrag}
             onPointerCancel={finishDrag}>
             <Canvas
-                camera={{ fov: 35, position: [0, 0, 5] }}
+                camera={{ fov: 35, position: [0, 0, 5.5] }}
                 dpr={[1, 2]}
                 gl={{ alpha: true, antialias: true }}>
                 <ambientLight intensity={1.4} />
                 <directionalLight position={[3, 4, 5]} intensity={2.2} />
                 <pointLight color={palette.accent} position={[-3, -2, 3]} intensity={16} distance={8} />
                 <Suspense fallback={null}>
-                    <LogoModel palette={palette} spinOffset={spinOffset} spinVelocity={spinVelocity} dragging={draggingRef} resetRequested={resetRequested} onReady={() => setIsReady(true)} />
+                    <LogoModel palette={palette} spinOffset={spinOffset} spinVelocity={spinVelocity} dragging={draggingRef} resetRequested={resetRequested} onReady={() => setIsReady(true)} scale={isMobile ? .75 : .88} />
                 </Suspense>
             </Canvas>
         </div>
