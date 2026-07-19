@@ -59,10 +59,13 @@ function LogoModel({ palette, spinOffset, spinVelocity, dragging, resetRequested
             if (Math.abs(spinOffset.current) < .001) resetRequested.current = false;
         }
         const progress = Math.min(window.scrollY / window.innerHeight, 1.2);
-        groupRef.current.rotation.x = -0.18 + progress * 0.35;
-        groupRef.current.rotation.y = progress * Math.PI * 2 + spinOffset.current;
+        const pitch = -0.18 + progress * 0.35;
+        const yaw = progress * Math.PI * 2 + spinOffset.current;
+        groupRef.current.rotation.x = pitch;
+        groupRef.current.rotation.y = yaw;
         groupRef.current.rotation.z = progress * .12;
-        groupRef.current.position.y = progress * 0.6;
+        groupRef.current.position.y = progress * 0.15;
+        groupRef.current.scale.setScalar(scale);
     });
 
     return <primitive ref={groupRef} object={model} scale={scale} />;
@@ -149,14 +152,14 @@ export function LogoScene() {
             onPointerUp={finishDrag}
             onPointerCancel={finishDrag}>
             <Canvas
-                camera={{ fov: 35, position: [0, 0, 5.5] }}
+                camera={{ fov: 40, position: [0, 0, 5.5] }}
                 dpr={[1, 2]}
                 gl={{ alpha: true, antialias: true }}>
                 <ambientLight intensity={1.4} />
                 <directionalLight position={[3, 4, 5]} intensity={2.2} />
                 <pointLight color={palette.accent} position={[-3, -2, 3]} intensity={16} distance={8} />
                 <Suspense fallback={null}>
-                    <LogoModel palette={palette} spinOffset={spinOffset} spinVelocity={spinVelocity} dragging={draggingRef} resetRequested={resetRequested} onReady={() => setIsReady(true)} scale={isMobile ? .75 : .88} />
+                    <LogoModel palette={palette} spinOffset={spinOffset} spinVelocity={spinVelocity} dragging={draggingRef} resetRequested={resetRequested} onReady={() => setIsReady(true)} scale={isMobile ? .75 : .82} />
                 </Suspense>
             </Canvas>
         </div>

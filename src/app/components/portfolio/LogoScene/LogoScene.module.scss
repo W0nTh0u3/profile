@@ -1,7 +1,7 @@
 .stage {
     cursor: grab;
     filter: blur(10px);
-    height: clamp(300px, 44vw, 620px);
+    height: min(80svh, clamp(420px, 52vw, 760px));
     opacity: 0;
     pointer-events: auto;
     position: absolute;
@@ -40,14 +40,14 @@
 
 @media (min-width: 1920px) {
     .stage {
-        height: min(58svh, clamp(620px, 34vw, 900px));
+        height: min(72svh, clamp(700px, 40vw, 1100px));
         width: min(58svh, clamp(620px, 34vw, 900px));
     }
 }
 
 @media (max-width: 720px) {
     .stage {
-        height: 72vw;
+        height: 84vw;
         right: -12vw;
         top: 25vh;
         width: 72vw;
