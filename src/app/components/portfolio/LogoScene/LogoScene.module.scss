@@ -1,13 +1,24 @@
 .stage {
     cursor: grab;
+    filter: blur(10px);
     height: clamp(300px, 44vw, 620px);
+    opacity: 0;
     pointer-events: auto;
     position: absolute;
     right: clamp(24px, 4vw, 96px);
     top: 20vh;
     touch-action: pan-y;
+    transform: translateY(28px) scale(.88) rotate(-4deg);
+    transform-origin: center;
+    transition: filter .8s ease-out, opacity .8s ease-out, transform .8s cubic-bezier(.22, 1, .36, 1);
     width: clamp(300px, 44vw, 620px);
     z-index: 1;
+}
+
+.ready {
+    filter: blur(0);
+    opacity: 1;
+    transform: none;
 }
 
 .dragging {

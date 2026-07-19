@@ -42,7 +42,7 @@ export function AboutSection() {
                     I build beautiful, functional web experiences that feel clear, <em>fast</em>, and considered.
                 </motion.p>
                 <motion.p variants={reveal} className={styles.statementAside}>
-                    Five years building modern, responsive applications. Beyond coding, games and sneaker culture keep my creativity and attention to detail sharp.
+                    Five+ years building modern, responsive applications. Beyond coding, games and sneaker culture keep my creativity and attention to detail sharp.
                 </motion.p>
                 <motion.div
                     ref={portraitRef}
