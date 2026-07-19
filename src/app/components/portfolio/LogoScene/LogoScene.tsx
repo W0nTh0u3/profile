@@ -61,7 +61,7 @@ function LogoModel({ palette, spinOffset, spinVelocity, dragging, resetRequested
         groupRef.current.position.y = progress * 0.6;
     });
 
-    return <primitive ref={groupRef} object={model} scale={0.68} />;
+    return <primitive ref={groupRef} object={model} scale={0.75} />;
 }
 
 export function LogoScene() {
@@ -103,6 +103,7 @@ export function LogoScene() {
     return (
         <div
             className={`${styles.stage} ${dragging ? styles.dragging : ''}`}
+            data-cursor="drag"
             role="img"
             tabIndex={0}
             aria-label="Interactive 3D Ryan Verzo logo. Drag or use the arrow keys to spin it."

@@ -184,8 +184,10 @@
 
 .roundArrow {
     align-items: center;
+    background: transparent;
     border: 1px solid rgba(237, 238, 229, .5);
     border-radius: 50%;
+    color: inherit;
     display: flex;
     font-size: 25px;
     height: 62px;

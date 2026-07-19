@@ -3,7 +3,7 @@
     height: clamp(300px, 44vw, 620px);
     pointer-events: auto;
     position: absolute;
-    right: -3vw;
+    right: clamp(24px, 4vw, 96px);
     top: 20vh;
     touch-action: pan-y;
     width: clamp(300px, 44vw, 620px);
@@ -14,16 +14,31 @@
     cursor: grabbing;
 }
 
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .stage,
+    .dragging,
+    .stage canvas {
+        cursor: none;
+    }
+}
+
 .stage canvas {
     height: 100%;
     width: 100%;
 }
 
+@media (min-width: 1920px) {
+    .stage {
+        height: min(58svh, clamp(620px, 34vw, 900px));
+        width: min(58svh, clamp(620px, 34vw, 900px));
+    }
+}
+
 @media (max-width: 720px) {
     .stage {
-        height: 90vw;
-        right: -24vw;
+        height: 72vw;
+        right: -12vw;
         top: 25vh;
-        width: 90vw;
+        width: 72vw;
     }
 }

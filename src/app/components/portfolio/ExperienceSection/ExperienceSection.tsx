@@ -6,7 +6,7 @@ import styles from './ExperienceSection.module.scss';
 
 export function ExperienceSection() {
     return (
-        <section className={styles.work} id="work">
+        <section className={styles.work} id="work" data-cursor-surface="dark">
             <div className={styles.sectionHeading}>
                 <p className={styles.sectionLabel}>03 / Experience</p>
                 <h2>Built where <em>it matters.</em></h2>

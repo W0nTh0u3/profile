@@ -7,10 +7,10 @@ import styles from './ContactSection.module.scss';
 
 export function ContactSection() {
     return (
-        <section className={styles.contact} id="contact">
+        <section className={styles.contact} id="contact" data-cursor-surface="light">
             <div className={styles.contactTop}>
                 <p>04 / Make a good thing</p>
-                <span>{profile.location} · © 2026 RY</span>
+                <span>{profile.location} · © {new Date().getFullYear().toString()} RV</span>
             </div>
             <motion.div
                 initial={{ opacity: 0, y: 45 }}

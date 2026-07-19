@@ -6,6 +6,7 @@
     min-height: 100svh;
     overflow: hidden;
     padding: 5vw 7.5vw;
+    position: relative;
 }
 
 .sectionLabel {
@@ -17,8 +18,10 @@
 .statementCopy {
     display: grid;
     gap: 8vw;
-    grid-template-columns: 1.45fr .55fr;
+    grid-template-columns: 1fr 1.4fr;
     margin: 11vw 0 10vw;
+    position: relative;
+    z-index: 1;
 }
 
 .statementCopy>p:first-child {
@@ -27,6 +30,8 @@
     letter-spacing: -.075em;
     line-height: .94;
     margin: 0;
+    grid-column: 2;
+    margin-left: -4vw;
 }
 
 .statementCopy em {
@@ -40,6 +45,23 @@
     line-height: 1.35;
     margin: 0;
     max-width: 310px;
+    grid-column: 2;
+}
+
+.portrait {
+    left: -26vw;
+    max-width: none;
+    pointer-events: none;
+    position: absolute;
+    top: calc(50% - clamp(260px, 26vw, 410px));
+    width: clamp(520px, 52vw, 820px);
+    z-index: 0;
+}
+
+.portrait svg {
+    display: block;
+    height: auto;
+    width: 100%;
 }
 
 .statementQuote {
@@ -51,6 +73,8 @@
     margin: 0 0 7vw auto;
     max-width: 660px;
     padding-left: 24px;
+    position: relative;
+    z-index: 1;
 }
 
 .marquee {
@@ -59,6 +83,8 @@
     margin: 0 -7.5vw;
     overflow: hidden;
     white-space: nowrap;
+    position: relative;
+    z-index: 1;
 }
 
 .marquee div {
@@ -86,17 +112,75 @@
     }
 }
 
+@media (max-width: 1000px) {
+    .statement {
+        padding: 8vw 6vw;
+    }
+
+    .statementCopy {
+        gap: 5vw;
+        grid-template-columns: .8fr 1.2fr;
+        margin: 9vw 0 8vw;
+    }
+
+    .statementCopy>p:first-child {
+        margin-left: -2vw;
+    }
+
+    .portrait {
+        left: -29vw;
+        top: calc(50% - 28vw);
+        width: 56vw;
+    }
+
+    .statementQuote {
+        margin-bottom: 6vw;
+        max-width: 58vw;
+    }
+}
+
 @media (max-width: 720px) {
     .statement {
+        min-height: auto;
         padding: 85px 20px;
     }
 
     .statementCopy {
         display: block;
-        margin: 70px 0;
+        margin: 60px 0 48px;
     }
 
     .statementAside {
         margin-top: 35px;
+    }
+
+    .statementCopy>p:first-child {
+        font-size: clamp(3rem, 13vw, 4.8rem);
+        margin-left: 0;
+    }
+
+    .statementAside {
+        margin-left: auto;
+        max-width: 230px;
+        text-align: right;
+    }
+
+    .portrait {
+        left: auto;
+        margin: 42px -9vw 0 auto;
+        opacity: 1;
+        position: relative;
+        top: auto;
+        width: min(68vw, 260px);
+    }
+
+    .statementQuote {
+        font-size: clamp(1.3rem, 6vw, 2rem);
+        margin: 0 0 55px 10vw;
+        padding-left: 16px;
+    }
+
+    .marquee {
+        margin: 0 -20px;
     }
 }

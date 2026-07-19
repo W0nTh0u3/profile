@@ -3,7 +3,7 @@ import styles from './ToolkitSection.module.scss';
 
 export function ToolkitSection() {
     return (
-        <section className={styles.toolkit}>
+        <section className={styles.toolkit} data-cursor-surface="light">
             <p className={styles.sectionLabel}>In the toolkit</p>
             <div className={styles.toolkitContent}>
                 <div className={styles.toolCloud} aria-label="Technical skills">

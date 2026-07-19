@@ -8,7 +8,7 @@ import styles from './CapabilitiesSection.module.scss';
 
 export function CapabilitiesSection() {
     return (
-        <section className={styles.capabilities}>
+        <section className={styles.capabilities} data-cursor-surface="light">
             <div className={styles.sectionHeading}>
                 <p className={styles.sectionLabel}>02 / What I bring</p>
                 <p className={styles.microCopy}>Equal parts systems thinker and detail obsessive. I work from the first fuzzy idea through the production release.</p>

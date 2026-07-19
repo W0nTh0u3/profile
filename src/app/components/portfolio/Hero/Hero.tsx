@@ -20,7 +20,7 @@ export function Hero() {
     }, [roles.length]);
 
     return (
-        <section className={styles.hero} id="top">
+        <section className={styles.hero} id="top" data-cursor-surface="dark">
             <nav className={styles.siteNav} aria-label="Primary navigation">
                 <a href="#top" className={styles.brand} aria-label="Ryan Verzo home">
                     <Image src="/logo.png" alt="" width={42} height={42} priority />
@@ -39,7 +39,7 @@ export function Hero() {
                 <motion.p className={styles.eyebrow} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>Manila, Philippines <span /> Available for thoughtful work</motion.p>
                 <motion.h1 initial="hidden" animate="visible" transition={{ staggerChildren: 0.12, delayChildren: 0.22 }}><motion.span variants={reveal}>Hi, I&apos;m</motion.span><motion.span variants={reveal} className={styles.italicLine}>Ryan<span className={styles.limeDot}>.</span></motion.span></motion.h1>
                 <div className={styles.introRole} aria-live="polite"><AnimatePresence mode="wait"><motion.p key={roles[roleIndex]} initial={{ opacity: 0, y: '100%' }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: '-100%' }} transition={{ type: 'spring', damping: 24, stiffness: 260 }}>{roles[roleIndex]}</motion.p></AnimatePresence></div>
-                <motion.div className={`${styles.heroBottom} ${styles.heroBottomMinimal}`} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.75 }}><a href="#work" className={styles.roundArrow} aria-label="Explore selected work"><ArrowDownIcon /></a></motion.div>
+                <motion.div className={`${styles.heroBottom} ${styles.heroBottomMinimal}`} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.75 }}><button type="button" className={styles.roundArrow} aria-label="Explore selected work" onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}><ArrowDownIcon /></button></motion.div>
             </div>
             <div className={styles.heroIndex} aria-hidden="true">01 / 04</div>
             <div className={styles.heroStamp} aria-hidden="true"><span>RYAN VERZO · SOFTWARE ENGINEER · </span><SparkIcon /></div>
