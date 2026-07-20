@@ -6,6 +6,9 @@
   "compatibility_flags": [
     "nodejs_compat"
   ],
+  "vars": {
+    "NEXT_PUBLIC_SITE_URL": "https://resjverzo.com"
+  },
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
