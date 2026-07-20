@@ -17,7 +17,7 @@ export function ContactSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.35 }}>
                 <p className={styles.contactPretitle}>Have an idea worth making?</p>
-                <a href="mailto:resjverzo@gmail.com" className={styles.contactLink}>
+                <a href={`mailto:${profile.email}`} className={styles.contactLink}>
                     Let&apos;s make it <ArrowUpRightIcon />
                 </a>
             </motion.div>

@@ -10,8 +10,8 @@ export function CapabilitiesSection() {
     return (
         <section className={styles.capabilities} data-cursor-surface="light">
             <div className={styles.sectionHeading}>
-                <p className={styles.sectionLabel}>02 / What I bring</p>
-                <p className={styles.microCopy}>Equal parts systems thinker and detail obsessive. I work from the first fuzzy idea through the production release.</p>
+                <p className={styles.sectionLabel}>02 / How I work</p>
+                <p className={styles.microCopy}>I turn ideas into polished, dependable products—from the first sketch through production release.</p>
             </div>
             <div className={styles.capabilityList}>
                 {capabilities.map(([number, title, description]) => (

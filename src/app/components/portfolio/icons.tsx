@@ -25,3 +25,7 @@ export function ArrowUpIcon(props: IconProps) {
 export function SparkIcon(props: IconProps) {
     return <Icon {...props}><path d="m12 2 1.8 8.2L22 12l-8.2 1.8L12 22l-1.8-8.2L2 12l8.2-1.8L12 2Z" /></Icon>;
 }
+
+export function DiceIcon(props: IconProps) {
+    return <Icon {...props}><rect x="3" y="3" width="18" height="18" rx="3" /><path d="M8 8h.01M16 8h.01M12 12h.01M8 16h.01M16 16h.01" strokeWidth="3" /></Icon>;
+}

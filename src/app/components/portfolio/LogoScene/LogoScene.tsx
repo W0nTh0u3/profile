@@ -72,7 +72,7 @@ function LogoModel({ palette, spinOffset, spinVelocity, dragging, resetRequested
 }
 
 export function LogoScene() {
-    const [theme, setTheme] = useState<ThemeName>('miami-vice');
+        const [theme, setTheme] = useState<ThemeName>('deep-sea');
     const [dragging, setDragging] = useState(false);
     const [isReady, setIsReady] = useState(false);
     const [isMobile, setIsMobile] = useState(false);

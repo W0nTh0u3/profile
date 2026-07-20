@@ -1,10 +1,10 @@
 :root {
-    --ink: #090b21;
-    --paper: #f5e8f5;
-    --lime: #ff71ce;
-    --aqua: #01d9fe;
-    --violet: #b967ff;
-    --muted: #aaa1c2;
+    --ink: #071923;
+    --paper: #edfaff;
+    --lime: #2dd4bf;
+    --aqua: #60a5fa;
+    --violet: #0f766e;
+    --muted: #9eb5c0;
 }
 
 :root[data-theme='tokyo-after-dark'] {
@@ -59,6 +59,96 @@
     --aqua: #63f2ff;
     --violet: #3458db;
     --muted: #a6bddb;
+}
+
+:root[data-theme='orchid-night'] {
+    --ink: #1a1026;
+    --paper: #f7efff;
+    --lime: #d08cff;
+    --aqua: #ff8fd8;
+    --violet: #7c3aed;
+    --muted: #b9a8c8;
+}
+
+:root[data-theme='aurora-mint'] {
+    --ink: #08211e;
+    --paper: #edfff9;
+    --lime: #45f3c3;
+    --aqua: #7ee8ff;
+    --violet: #36c98d;
+    --muted: #9bc4b7;
+}
+
+:root[data-theme='sunset-pop'] {
+    --ink: #2a111c;
+    --paper: #fff3e8;
+    --lime: #ff6b8a;
+    --aqua: #ffcf5c;
+    --violet: #ff8a4c;
+    --muted: #d0a5a7;
+}
+
+:root[data-theme='matrix-glow'] {
+    --ink: #071b0d;
+    --paper: #efffe9;
+    --lime: #46f36f;
+    --aqua: #b6ff4d;
+    --violet: #16a34a;
+    --muted: #9bb89a;
+}
+
+:root[data-theme='lavender-haze'] {
+    --ink: #171329;
+    --paper: #f8f5ff;
+    --lime: #b9a7ff;
+    --aqua: #f2b5ff;
+    --violet: #8b5cf6;
+    --muted: #b4aec8;
+}
+
+:root[data-theme='midnight-gold'] {
+    --ink: #1d1709;
+    --paper: #fff9e8;
+    --lime: #f5c542;
+    --aqua: #ffa94d;
+    --violet: #b45309;
+    --muted: #c4ae83;
+}
+
+:root[data-theme='iceberg'] {
+    --ink: #08182b;
+    --paper: #effaff;
+    --lime: #71d7ff;
+    --aqua: #b4f3ff;
+    --violet: #2563eb;
+    --muted: #9cb9cb;
+}
+
+:root[data-theme='wildberry'] {
+    --ink: #260d24;
+    --paper: #fff2fc;
+    --lime: #f472b6;
+    --aqua: #c084fc;
+    --violet: #db2777;
+    --muted: #c3a0bb;
+}
+
+:root[data-theme='jade-sun'] {
+    --ink: #0a211a;
+    --paper: #f7ffea;
+    --lime: #34d399;
+    --aqua: #facc15;
+    --violet: #059669;
+    --muted: #a7bd9c;
+}
+
+:root[data-theme='coral-reef'] {
+    --ink: #25131b;
+    --paper: #fff6ee;
+    --lime: #fb7185;
+    --aqua: #2dd4bf;
+    --violet: #f97316;
+    --muted: #c9a9a4;
 }
 
 * {
