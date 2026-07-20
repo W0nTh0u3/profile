@@ -4,6 +4,9 @@ import "./globals.css";
 import "./components/portfolio/portfolio.scss";
 
 export const metadata: Metadata = {
+	metadataBase: new URL(
+		process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+	),
 	title: "Ryan Verzo | Software Engineer",
 	description: "Ryan Verzo is a full-stack software engineer building resilient digital products.",
 	openGraph: {
