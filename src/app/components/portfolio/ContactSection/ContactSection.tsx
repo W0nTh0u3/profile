@@ -9,7 +9,7 @@ export function ContactSection() {
     return (
         <section className={styles.contact} id="contact" data-cursor-surface="light">
             <header className={styles.contactTop}>
-                <p>04 / Make a good thing</p>
+                <p>05 / Make a good thing</p>
                 <span>{profile.location} · © {new Date().getFullYear().toString()} RV</span>
             </header>
             <motion.article

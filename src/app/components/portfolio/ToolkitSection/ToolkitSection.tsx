@@ -19,9 +19,11 @@ export function ToolkitSection() {
                         </li>
                     ))}
                 </ul>
-                <p>
-                    The toolkit changes with the problem, not the trend. The constant is thoughtful execution.
-                </p>
+                <blockquote className={styles.principle}>
+                    <span>The toolkit changes with the problem,</span>
+                    <strong>not the trend.</strong>
+                    <small>The constant is thoughtful execution.</small>
+                </blockquote>
             </div>
         </section>
     );

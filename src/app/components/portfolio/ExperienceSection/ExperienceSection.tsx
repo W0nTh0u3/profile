@@ -1,18 +1,18 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { work } from '../data';
+import { experience } from '../data';
 import styles from './ExperienceSection.module.scss';
 
 export function ExperienceSection() {
     return (
-        <section className={styles.work} id="work" data-cursor-surface="dark">
+        <section className={styles.work} id="experience" data-cursor-surface="dark">
             <header className={styles.sectionHeading}>
-                <p className={styles.sectionLabel}>03 / Experience</p>
+                <p className={styles.sectionLabel}>04 / Experience</p>
                 <h2>Built where <em>it matters.</em></h2>
             </header>
             <ol className={styles.workList}>
-                {work.map((item, index) => (
+                {experience.map((item, index) => (
                     <motion.li
                         className={styles.workItem}
                         key={`${item.company}-${item.role}`}
@@ -29,11 +29,6 @@ export function ExperienceSection() {
                             <p>{item.role}</p>
                         </hgroup>
                         <p className={styles.workDetail}>{item.detail}</p>
-                        <ul className={styles.workTags} aria-label={`${item.company} technologies`}>
-                            {item.tags.map((tag) => (
-                                <li key={tag}>{tag}</li>
-                            ))}
-                        </ul>
                     </motion.li>
                 ))}
             </ol>

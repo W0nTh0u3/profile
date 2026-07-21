@@ -93,7 +93,7 @@ export function Hero() {
                 <motion.div className={`${styles.heroBottom} ${styles.heroBottomMinimal}`} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.75 }}><button type="button" className={styles.roundArrow} aria-label="Explore selected work" onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}><ArrowDownIcon /></button></motion.div>
             </header>
             <footer className={styles.heroRail}>
-                <span>01 / 04</span>
+                <span>01 / 05</span>
                 <span>Scroll to explore</span>
                 <a href="#work">Selected work <ArrowDownIcon /></a>
             </footer>

@@ -62,11 +62,36 @@
     color: transparent;
 }
 
-.toolkitContent>p {
-    font-size: 15px;
-    line-height: 1.45;
+.principle {
+    border-top: 2px solid var(--ink);
+    font-family: Georgia, serif;
+    font-size: clamp(1.45rem, 2.15vw, 2.65rem);
+    font-style: italic;
+    line-height: 1.02;
     margin: 0;
     max-width: 245px;
+    padding-top: 16px;
+}
+
+.principle span,
+.principle strong,
+.principle small {
+    display: block;
+}
+
+.principle strong {
+    color: var(--violet);
+    font-weight: 400;
+}
+
+.principle small {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    letter-spacing: .04em;
+    line-height: 1.4;
+    margin-top: 22px;
+    text-transform: uppercase;
 }
 
 @keyframes toolkit-shake {
@@ -103,8 +128,9 @@
         margin-top: 55px;
     }
 
-    .toolkitContent>p {
+    .principle {
         margin-top: 45px;
+        max-width: 300px;
     }
 
     .toolCloud {

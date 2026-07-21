@@ -6,6 +6,7 @@ import { Cursor } from './components/portfolio/Cursor/Cursor';
 import { ExperienceSection } from './components/portfolio/ExperienceSection/ExperienceSection';
 import { Hero } from './components/portfolio/Hero/Hero';
 import { ScrollProgress } from './components/portfolio/ScrollProgress/ScrollProgress';
+import { SelectedWorkSection } from './components/portfolio/SelectedWorkSection/SelectedWorkSection';
 import { ThemeController } from './components/portfolio/ThemeController';
 import { ThemeRandomizer } from './components/portfolio/ThemeRandomizer/ThemeRandomizer';
 import { ToolkitSection } from './components/portfolio/ToolkitSection/ToolkitSection';
@@ -20,6 +21,7 @@ export default function Home() {
             <ThemeRandomizer />
             <Hero />
             <AboutSection />
+            <SelectedWorkSection />
             <CapabilitiesSection />
             <ExperienceSection />
             <ToolkitSection />

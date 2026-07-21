@@ -10,7 +10,7 @@ export function CapabilitiesSection() {
     return (
         <section className={styles.capabilities} data-cursor-surface="light">
             <header className={styles.sectionHeading}>
-                <h2 className={styles.sectionLabel}>02 / How I work</h2>
+                <h2 className={styles.sectionLabel}>03 / How I work</h2>
                 <p className={styles.microCopy}>Systems over one-offs. Clear decisions, deliberate execution.</p>
             </header>
             <ol className={styles.capabilityList}>
