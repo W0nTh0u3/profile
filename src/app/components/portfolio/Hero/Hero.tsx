@@ -4,6 +4,7 @@ import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { LogoScene } from '../LogoScene/LogoScene';
+import { profile } from '../data';
 import { ArrowDownIcon, ArrowUpRightIcon, SparkIcon } from '../icons';
 import { reveal } from '../motion';
 import styles from './Hero.module.scss';
@@ -14,12 +15,10 @@ export function Hero() {
     const [roleIndex, setRoleIndex] = useState(0);
     const [isNameGlitching, setIsNameGlitching] = useState(false);
     const [isGamerName, setIsGamerName] = useState(false);
-    const roles = ['A Developer', 'A Gamer', 'A Sneakerhead'];
-
     useEffect(() => {
-        const intervalId = window.setInterval(() => setRoleIndex((index) => (index + 1) % roles.length), 3000);
+        const intervalId = window.setInterval(() => setRoleIndex((index) => (index + 1) % profile.hero.roles.length), 3000);
         return () => window.clearInterval(intervalId);
-    }, [roles.length]);
+    }, []);
 
     useEffect(() => {
         const timeoutIds = new Set<number>();
@@ -55,9 +54,9 @@ export function Hero() {
     return (
         <section className={styles.hero} id="top" data-cursor-surface="dark">
             <nav className={styles.siteNav} aria-label="Primary navigation">
-                <a href="#top" className={styles.brand} aria-label="Ryan Verzo home">
+                <a href="#top" className={styles.brand} aria-label={`${profile.name} home`}>
                     <Image src="/logo.png" alt="" width={42} height={42} priority />
-                    <span>Ryan Verzo<sup>®</sup></span>
+                    <span>{profile.name}<sup>®</sup></span>
                 </a>
                 <ul className={styles.navLinks}>
                     <li><a href="#work">Selected work</a></li>
@@ -71,23 +70,23 @@ export function Hero() {
             <header className={styles.heroCopy}>
                 <motion.p className={styles.eyebrow} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>
                     <span className={styles.availabilityMarker} />
-                    <span className={styles.availability}>Available for thoughtful work</span>
+                    <span className={styles.availability}>{profile.hero.availability}</span>
                 </motion.p>
                 <motion.h1 initial="hidden" animate="visible" transition={{ staggerChildren: 0.12, delayChildren: 0.22 }}>
                     <motion.span variants={reveal}>Hi, I&apos;m</motion.span>
                     <motion.span variants={reveal} className={`${styles.italicLine} ${styles.nameLockup}`}>
-                        <span className={`${styles.serifName} ${isNameGlitching ? styles.nameGlitch : ''} ${isGamerName ? styles.serifNameHidden : ''}`} data-text="RYAN">Ryan<span className={styles.limeDot}>.</span></span>
-                        <span className={`${styles.gamerName} ${isGamerName ? styles.gamerNameVisible : ''}`}>RYAN.</span>
+                        <span className={`${styles.serifName} ${isNameGlitching ? styles.nameGlitch : ''} ${isGamerName ? styles.serifNameHidden : ''}`} data-text={profile.firstName.toUpperCase()}>{profile.firstName}<span className={styles.limeDot}>.</span></span>
+                        <span className={`${styles.gamerName} ${isGamerName ? styles.gamerNameVisible : ''}`}>{profile.firstName.toUpperCase()}.</span>
                     </motion.span>
                 </motion.h1>
-                <div className={styles.introRole} aria-live="polite"><AnimatePresence mode="wait"><motion.p key={roles[roleIndex]} initial={{ opacity: 0, y: '100%' }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: '-100%' }} transition={{ type: 'spring', damping: 24, stiffness: 260 }}>{roles[roleIndex]}</motion.p></AnimatePresence></div>
+                <div className={styles.introRole} aria-live="polite"><AnimatePresence mode="wait"><motion.p key={profile.hero.roles[roleIndex]} initial={{ opacity: 0, y: '100%' }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: '-100%' }} transition={{ type: 'spring', damping: 24, stiffness: 260 }}>{profile.hero.roles[roleIndex]}</motion.p></AnimatePresence></div>
                 <aside className={styles.heroProof} aria-label="Professional summary">
-                    <p>Engineering practice</p>
-                    <p>Interfaces, systems, and releases built to last.</p>
+                    <p>{profile.hero.proofLabel}</p>
+                    <p>{profile.hero.proofMessage}</p>
                     <ul>
-                        <li>5+ years</li>
-                        <li>Full-stack</li>
-                        <li>Manila, PH</li>
+                        <li>{profile.yearsExperience} years</li>
+                        <li>{profile.specialty}</li>
+                        <li>{profile.shortLocation}</li>
                     </ul>
                 </aside>
                 <motion.div className={`${styles.heroBottom} ${styles.heroBottomMinimal}`} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.75 }}><button type="button" className={styles.roundArrow} aria-label="Explore selected work" onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}><ArrowDownIcon /></button></motion.div>
@@ -97,7 +96,7 @@ export function Hero() {
                 <span>Scroll to explore</span>
                 <a href="#work">Selected work <ArrowDownIcon /></a>
             </footer>
-            <div className={styles.heroStamp} aria-hidden="true"><span>RYAN VERZO · SOFTWARE ENGINEER · </span><SparkIcon /></div>
+            <div className={styles.heroStamp} aria-hidden="true"><span>{profile.name.toUpperCase()} · SOFTWARE ENGINEER · </span><SparkIcon /></div>
         </section>
     );
 }

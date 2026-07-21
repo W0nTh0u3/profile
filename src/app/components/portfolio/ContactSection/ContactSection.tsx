@@ -22,16 +22,16 @@ export function ContactSection() {
                 </a>
             </motion.article>
             <footer className={styles.contactFooter}>
-                <a href="https://github.com/w0nth0u3" target="_blank" rel="noreferrer">
+                <a href={profile.github} target="_blank" rel="noreferrer">
                     GitHub <ArrowUpRightIcon />
                 </a>
-                <a href="https://linkedin.com/in/resjverzo" target="_blank" rel="noreferrer">
+                <a href={profile.linkedin} target="_blank" rel="noreferrer">
                     LinkedIn <ArrowUpRightIcon />
                 </a>
-                <a href="/Ryan_Verzo_Resume_FSE_2026-07.pdf" target="_blank" rel="noreferrer">
+                <a href={profile.resume} target="_blank" rel="noreferrer">
                     Resume <ArrowUpRightIcon />
                 </a>
-                <a href="tel:+639760208693">{profile.phone} <ArrowUpRightIcon /></a>
+                <a href={profile.phoneHref}>{profile.phone} <ArrowUpRightIcon /></a>
             </footer>
         </section>
     );

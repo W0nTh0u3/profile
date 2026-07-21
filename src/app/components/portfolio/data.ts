@@ -40,9 +40,31 @@ export const capabilities = [
 ] as const;
 
 export const profile = {
+  name: "Ryan Verzo",
+  firstName: "Ryan",
+  yearsExperience: "5+",
+  specialty: "Full-stack",
   location: "Manila, Philippines",
+  shortLocation: "Manila, PH",
   phone: "+63 976 020 8693",
+  phoneHref: "tel:+639760208693",
   email: "me@resjverzo.com",
+  github: "https://github.com/w0nth0u3",
+  linkedin: "https://linkedin.com/in/resjverzo",
+  resume: "/Ryan_Verzo_Resume_FSE_2026-07.pdf",
+  hero: {
+    availability: "Available for thoughtful work",
+    roles: ["A Developer", "A Gamer", "A Sneakerhead"],
+    proofLabel: "Engineering practice",
+    proofMessage: "Interfaces, systems, and releases built to last.",
+  },
+  about: {
+    introStart: "I build beautiful, functional web experiences that feel clear, ",
+    introEmphasis: "fast",
+    introEnd: ", and considered.",
+    detail: "years building modern, responsive applications. Beyond coding, games and sneaker culture keep my creativity and attention to detail sharp.",
+    quote: "The details people notice are often the work no one sees.",
+  },
 };
 
 export const selectedWork = [
@@ -107,7 +129,7 @@ export const experience = [
     company: "Enstack",
     role: "Software Engineer",
     detail:
-      "Cross-platform commerce engineering across web, iOS, Android, and desktop; resolved 200+ critical UI and API issues and owned staging-to-production CI/CD releases.",
+      "Cross-platform commerce engineering across web, iOS, Android, and desktop; resolved 200+ critical UI and API issues, reviewed front-end and back-end pull requests for maintainability and release readiness, and owned staging-to-production CI/CD releases.",
   },
   {
     period: "2023 - 2025",

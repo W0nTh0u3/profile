@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import { Fragment, useEffect, useRef, useState } from 'react';
-import { marqueeItems } from '../data';
+import { marqueeItems, profile } from '../data';
 import { reveal } from '../motion';
 import { SparkIcon } from '../icons';
 import FaceVector from './face-vector.svg';
@@ -39,10 +39,10 @@ export function AboutSection() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.35 }}>
                 <motion.p variants={reveal}>
-                    I build beautiful, functional web experiences that feel clear, <em>fast</em>, and considered.
+                    {profile.about.introStart}<em>{profile.about.introEmphasis}</em>{profile.about.introEnd}
                 </motion.p>
                 <motion.p variants={reveal} className={styles.statementAside}>
-                    <strong className={styles.experienceMetric}>5+</strong> years building modern, responsive applications. Beyond coding, games and sneaker culture keep my creativity and attention to detail sharp.
+                    <strong className={styles.experienceMetric}>{profile.yearsExperience}</strong> {profile.about.detail}
                 </motion.p>
                 <motion.figure
                     ref={portraitRef}
@@ -52,7 +52,7 @@ export function AboutSection() {
                     whileInView={{ opacity: 1, rotate: 0, scale: 1, y: 0 }}
                     viewport={{ once: true, amount: .35 }}
                     transition={{ type: 'spring', damping: 20, stiffness: 140 }}>
-                    <FaceVector role="img" aria-label="Illustrated portrait of Ryan Verzo" />
+                    <FaceVector role="img" aria-label={`Illustrated portrait of ${profile.name}`} />
                 </motion.figure>
             </motion.header>
             <motion.blockquote
@@ -61,7 +61,7 @@ export function AboutSection() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.35 }}>
-                “The details people notice are often the work no one sees.”
+                “{profile.about.quote}”
             </motion.blockquote>
             <aside className={styles.marquee} aria-hidden="true">
                 <p>
