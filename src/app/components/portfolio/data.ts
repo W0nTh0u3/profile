@@ -29,10 +29,14 @@ export const capabilities = [
   [
     "01",
     "Interface systems",
-    "Angular development, frontend architecture, responsive design, and UI/UX implementation.",
+    "Angular development, responsive design, reusable UI systems, and UX implementation.",
   ],
-  ["02", "Product engineering", "SSR, APIs, deployments, performance"],
-  ["03", "Complex platforms", "Commerce, finance, mobile, desktop"],
+  [
+    "02",
+    "Full-stack product delivery",
+    "SSR, REST API integration and endpoints, relational data workflows, performance, and CI/CD releases.",
+  ],
+  ["03", "Complex platforms", "Commerce, finance, web, mobile, and desktop products."],
 ] as const;
 
 export const profile = {
