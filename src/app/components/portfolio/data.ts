@@ -53,6 +53,7 @@ export const profile = {
   linkedin: "https://linkedin.com/in/resjverzo",
   resume: "/Ryan_Verzo_Resume_FSE_2026-07.pdf",
   hero: {
+    showProof: false,
     availability: "Available for thoughtful work",
     roles: ["A Developer", "A Gamer", "A Sneakerhead"],
     proofLabel: "Engineering practice",

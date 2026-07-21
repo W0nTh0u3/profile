@@ -80,7 +80,7 @@ export function Hero() {
                     </motion.span>
                 </motion.h1>
                 <div className={styles.introRole} aria-live="polite"><AnimatePresence mode="wait"><motion.p key={profile.hero.roles[roleIndex]} initial={{ opacity: 0, y: '100%' }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: '-100%' }} transition={{ type: 'spring', damping: 24, stiffness: 260 }}>{profile.hero.roles[roleIndex]}</motion.p></AnimatePresence></div>
-                <aside className={styles.heroProof} aria-label="Professional summary">
+                {profile.hero.showProof && <aside className={styles.heroProof} aria-label="Professional summary">
                     <p>{profile.hero.proofLabel}</p>
                     <p>{profile.hero.proofMessage}</p>
                     <ul>
@@ -88,7 +88,7 @@ export function Hero() {
                         <li>{profile.specialty}</li>
                         <li>{profile.shortLocation}</li>
                     </ul>
-                </aside>
+                </aside>}
                 <motion.div className={`${styles.heroBottom} ${styles.heroBottomMinimal}`} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.75 }}><button type="button" className={styles.roundArrow} aria-label="Explore selected work" onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}><ArrowDownIcon /></button></motion.div>
             </header>
             <footer className={styles.heroRail}>
