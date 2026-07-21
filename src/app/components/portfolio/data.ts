@@ -86,7 +86,7 @@ export const selectedWork = [
     impact: [
       "50+ interfaces shipped",
       "Angular 15 to 18",
-      "Team-lead coverage",
+      "Team-lead coverage during absences",
     ],
     stack: ["Angular", "TypeScript", "React", "Jenkins", "Figma"],
   },
