@@ -33,7 +33,7 @@ export const capabilities = [
   ],
   [
     "02",
-    "Full-stack product delivery",
+    "Full-stack product engineering",
     "SSR, REST API integration and endpoints, relational data workflows, performance, and CI/CD releases.",
   ],
   ["03", "Complex platforms", "Commerce, finance, web, mobile, and desktop products."],
