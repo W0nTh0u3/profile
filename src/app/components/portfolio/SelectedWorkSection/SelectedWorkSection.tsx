@@ -11,7 +11,7 @@ export function SelectedWorkSection() {
                 <p>02 / Selected work</p>
                 <h2>Systems with <em>proof.</em></h2>
             </header>
-            <p className={styles.disclosure}>Client names and sensitive implementation details are omitted due to confidentiality agreements.</p>
+            <p className={styles.disclosure}>Client names and sensitive implementation details are omitted.</p>
             <ol className={styles.caseStudies}>
                 {selectedWork.slice(0, 4).map((project, index) => (
                     <motion.li
