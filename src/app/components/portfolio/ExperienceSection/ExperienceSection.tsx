@@ -7,36 +7,36 @@ import styles from './ExperienceSection.module.scss';
 export function ExperienceSection() {
     return (
         <section className={styles.work} id="work" data-cursor-surface="dark">
-            <div className={styles.sectionHeading}>
+            <header className={styles.sectionHeading}>
                 <p className={styles.sectionLabel}>03 / Experience</p>
                 <h2>Built where <em>it matters.</em></h2>
-            </div>
-            <div className={styles.workList}>
+            </header>
+            <ol className={styles.workList}>
                 {work.map((item, index) => (
-                    <motion.article
+                    <motion.li
                         className={styles.workItem}
                         key={`${item.company}-${item.role}`}
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.2 }}
                         transition={{ delay: index * 0.08 }}>
-                        <div className={styles.workMeta}>
+                        <header className={styles.workMeta}>
                             <span>{item.period}</span>
                             <span>0{index + 1}</span>
-                        </div>
-                        <div className={styles.workMain}>
+                        </header>
+                        <hgroup className={styles.workMain}>
                             <h3>{item.company}</h3>
                             <p>{item.role}</p>
-                        </div>
+                        </hgroup>
                         <p className={styles.workDetail}>{item.detail}</p>
-                        <div className={styles.workTags}>
+                        <ul className={styles.workTags} aria-label={`${item.company} technologies`}>
                             {item.tags.map((tag) => (
-                                <span key={tag}>{tag}</span>
+                                <li key={tag}>{tag}</li>
                             ))}
-                        </div>
-                    </motion.article>
+                        </ul>
+                    </motion.li>
                 ))}
-            </div>
+            </ol>
         </section>
     );
 }

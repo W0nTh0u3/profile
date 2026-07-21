@@ -11,7 +11,7 @@
     padding: .7rem;
     position: fixed;
     right: 3.5rem;
-    transition: background-color .2s ease, color .2s ease, transform .2s ease;
+    transition: background-color .2s ease, bottom .35s cubic-bezier(.22, 1, .36, 1), color .2s ease, transform .2s ease;
     z-index: 21;
 
     svg {
@@ -25,7 +25,6 @@
         border-color: var(--aqua);
         color: var(--aqua);
         outline: none;
-        transform: translate(-2px, -2px);
     }
 
     &:focus-visible {
@@ -50,9 +49,27 @@
     }
 }
 
+.onContact {
+    bottom: 8rem;
+}
+
+@media (min-width: 481px) {
+    .atTop {
+        bottom: 3.5rem;
+    }
+}
+
 @media (max-width: 480px) {
     .button {
         bottom: 6rem;
         right: 1rem;
+    }
+
+    .atTop {
+        bottom: 3rem;
+    }
+
+    .onContact {
+        bottom: 7.5rem;
     }
 }

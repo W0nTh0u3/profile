@@ -4,11 +4,11 @@ import styles from './ToolkitSection.module.scss';
 export function ToolkitSection() {
     return (
         <section className={styles.toolkit} data-cursor-surface="light">
-            <p className={styles.sectionLabel}>In the toolkit</p>
+            <h2 className={styles.sectionLabel}>In the toolkit</h2>
             <div className={styles.toolkitContent}>
-                <div className={styles.toolCloud} aria-label="Technical skills">
+                <ul className={styles.toolCloud} aria-label="Technical skills">
                     {toolkit.map(([name, className]) => (
-                        <span
+                        <li
                             className={className
                                 .split(' ')
                                 .filter(Boolean)
@@ -16,12 +16,11 @@ export function ToolkitSection() {
                                 .join(' ')}
                             key={name}>
                             {name}
-                        </span>
+                        </li>
                     ))}
-                </div>
+                </ul>
                 <p>
-                    Technologies are useful only when they help people do something better. I choose the
-                    right amount of technology, then sweat the execution.
+                    The toolkit changes with the problem, not the trend. The constant is thoughtful execution.
                 </p>
             </div>
         </section>

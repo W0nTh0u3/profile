@@ -48,6 +48,13 @@
     grid-column: 2;
 }
 
+.experienceMetric {
+    color: var(--violet);
+    font-size: 1.25em;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+}
+
 .portrait {
     left: -26vw;
     max-width: none;
@@ -87,11 +94,12 @@
     z-index: 1;
 }
 
-.marquee div {
+.marquee p {
     animation: marquee 24s linear infinite;
     font-size: clamp(2.3rem, 5vw, 6rem);
     font-weight: 700;
     letter-spacing: -.06em;
+    margin: 0;
     padding: 14px 0;
     text-transform: uppercase;
     width: max-content;

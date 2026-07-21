@@ -2,17 +2,17 @@
 
 import { motion } from 'framer-motion';
 import { profile } from '../data';
-import { ArrowUpIcon, ArrowUpRightIcon } from '../icons';
+import { ArrowUpRightIcon } from '../icons';
 import styles from './ContactSection.module.scss';
 
 export function ContactSection() {
     return (
         <section className={styles.contact} id="contact" data-cursor-surface="light">
-            <div className={styles.contactTop}>
+            <header className={styles.contactTop}>
                 <p>04 / Make a good thing</p>
                 <span>{profile.location} · © {new Date().getFullYear().toString()} RV</span>
-            </div>
-            <motion.div
+            </header>
+            <motion.article
                 initial={{ opacity: 0, y: 45 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.35 }}>
@@ -20,8 +20,8 @@ export function ContactSection() {
                 <a href={`mailto:${profile.email}`} className={styles.contactLink}>
                     Let&apos;s make it <ArrowUpRightIcon />
                 </a>
-            </motion.div>
-            <div className={styles.contactFooter}>
+            </motion.article>
+            <footer className={styles.contactFooter}>
                 <a href="https://github.com/w0nth0u3" target="_blank" rel="noreferrer">
                     GitHub <ArrowUpRightIcon />
                 </a>
@@ -32,8 +32,7 @@ export function ContactSection() {
                     Resume <ArrowUpRightIcon />
                 </a>
                 <a href="tel:+639760208693">{profile.phone} <ArrowUpRightIcon /></a>
-                <span>Scroll to explore <ArrowUpIcon /></span>
-            </div>
+            </footer>
         </section>
     );
 }

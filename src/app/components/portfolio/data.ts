@@ -56,7 +56,7 @@ export const work = [
     role: "Software Developer",
     detail:
       "Translated 50+ detailed product designs into high-performing, accessible customer experiences.",
-    tags: ["Angular 15-18", "React", ""],
+    tags: ["Angular 15-18", "React"],
   },
   {
     period: "2021 - 2023",

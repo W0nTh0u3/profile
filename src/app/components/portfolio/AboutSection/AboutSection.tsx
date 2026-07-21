@@ -9,7 +9,7 @@ import FaceVector from './face-vector.svg';
 import styles from './AboutSection.module.scss';
 
 export function AboutSection() {
-    const portraitRef = useRef<HTMLDivElement>(null);
+    const portraitRef = useRef<HTMLElement>(null);
     const reduceMotion = useReducedMotion();
     const [isMobile, setIsMobile] = useState(false);
     const { scrollYProgress } = useScroll({ target: portraitRef, offset: ['start end', 'end start'] });
@@ -32,7 +32,7 @@ export function AboutSection() {
                 viewport={{ once: true }}>
                 01 / A little context
             </motion.p>
-            <motion.div
+            <motion.header
                 className={styles.statementCopy}
                 variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
                 initial="hidden"
@@ -42,9 +42,9 @@ export function AboutSection() {
                     I build beautiful, functional web experiences that feel clear, <em>fast</em>, and considered.
                 </motion.p>
                 <motion.p variants={reveal} className={styles.statementAside}>
-                    Five+ years building modern, responsive applications. Beyond coding, games and sneaker culture keep my creativity and attention to detail sharp.
+                    <strong className={styles.experienceMetric}>5+</strong> years building modern, responsive applications. Beyond coding, games and sneaker culture keep my creativity and attention to detail sharp.
                 </motion.p>
-                <motion.div
+                <motion.figure
                     ref={portraitRef}
                     className={styles.portrait}
                     style={{ x: reduceMotion ? 0 : portraitX }}
@@ -53,25 +53,25 @@ export function AboutSection() {
                     viewport={{ once: true, amount: .35 }}
                     transition={{ type: 'spring', damping: 20, stiffness: 140 }}>
                     <FaceVector role="img" aria-label="Illustrated portrait of Ryan Verzo" />
-                </motion.div>
-            </motion.div>
+                </motion.figure>
+            </motion.header>
             <motion.blockquote
                 className={styles.statementQuote}
                 variants={reveal}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.35 }}>
-                “Full-stack software engineer building considered, resilient products from interface to infrastructure.”
+                “The details people notice are often the work no one sees.”
             </motion.blockquote>
-            <div className={styles.marquee} aria-hidden="true">
-                <div>
+            <aside className={styles.marquee} aria-hidden="true">
+                <p>
                     {[...marqueeItems, ...marqueeItems].map((item, index) => (
                         <Fragment key={`${item}-${index}`}>
                             {item} <SparkIcon />
                         </Fragment>
                     ))}
-                </div>
-            </div>
+                </p>
+            </aside>
         </section>
     );
 }

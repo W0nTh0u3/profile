@@ -11,9 +11,12 @@
 .contactFooter {
     display: flex;
     font-size: 10px;
-    justify-content: space-between;
     letter-spacing: .09em;
     text-transform: uppercase;
+}
+
+.contactTop {
+    justify-content: space-between;
 }
 
 .contactTop p {
@@ -50,7 +53,8 @@
 
 .contactFooter {
     border-top: 1px solid var(--ink);
-    gap: 16px;
+    gap: clamp(16px, 3vw, 48px);
+    justify-content: flex-start;
     padding-top: 13px;
 }
 

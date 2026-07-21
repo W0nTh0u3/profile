@@ -35,7 +35,9 @@
 }
 
 .workList {
+    list-style: none;
     margin-top: 9vw;
+    padding: 0;
 }
 
 .workItem {
@@ -84,9 +86,12 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.workTags span {
+.workTags li {
     color: #a5a69e;
     font-size: 11px;
 }
@@ -130,7 +135,7 @@
         flex-wrap: wrap;
     }
 
-    .workTags span:not(:last-child)::after {
+    .workTags li:not(:last-child)::after {
         content: ' /';
     }
 }

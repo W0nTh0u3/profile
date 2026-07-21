@@ -9,13 +9,13 @@ import styles from './CapabilitiesSection.module.scss';
 export function CapabilitiesSection() {
     return (
         <section className={styles.capabilities} data-cursor-surface="light">
-            <div className={styles.sectionHeading}>
-                <p className={styles.sectionLabel}>02 / How I work</p>
-                <p className={styles.microCopy}>I turn ideas into polished, dependable products—from the first sketch through production release.</p>
-            </div>
-            <div className={styles.capabilityList}>
+            <header className={styles.sectionHeading}>
+                <h2 className={styles.sectionLabel}>02 / How I work</h2>
+                <p className={styles.microCopy}>Systems over one-offs. Clear decisions, deliberate execution.</p>
+            </header>
+            <ol className={styles.capabilityList}>
                 {capabilities.map(([number, title, description]) => (
-                    <motion.article
+                    <motion.li
                         className={styles.capability}
                         key={number}
                         variants={reveal}
@@ -23,12 +23,12 @@ export function CapabilitiesSection() {
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.3 }}>
                         <span>{number}</span>
-                        <h2>{title}</h2>
+                        <h3>{title}</h3>
                         <p>{description}</p>
                         <ArrowDownRightIcon />
-                    </motion.article>
+                    </motion.li>
                 ))}
-            </div>
+            </ol>
         </section>
     );
 }

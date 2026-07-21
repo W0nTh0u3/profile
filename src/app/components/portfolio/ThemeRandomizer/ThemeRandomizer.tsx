@@ -7,12 +7,16 @@ import styles from './ThemeRandomizer.module.scss';
 
 export function ThemeRandomizer() {
     const [isLightSurface, setIsLightSurface] = useState(false);
+    const [isAtTop, setIsAtTop] = useState(true);
+    const [isOnContact, setIsOnContact] = useState(false);
 
     useEffect(() => {
         const updateSurface = () => {
             const elements = document.elementsFromPoint(window.innerWidth - 40, window.innerHeight - 100);
             const section = elements.find((element) => element instanceof HTMLElement && element.dataset.cursorSurface);
             setIsLightSurface(section instanceof HTMLElement && section.dataset.cursorSurface === 'light');
+            setIsOnContact(section instanceof HTMLElement && section.id === 'contact');
+            setIsAtTop(window.scrollY <= 120);
         };
 
         updateSurface();
@@ -35,7 +39,7 @@ export function ThemeRandomizer() {
     };
 
     return (
-        <button className={`${styles.button} ${isLightSurface ? styles.onLight : ''}`} type="button" onClick={randomizeTheme} aria-label="Choose a random color theme">
+        <button className={`${styles.button} ${isLightSurface ? styles.onLight : ''} ${isOnContact ? styles.onContact : ''} ${isAtTop ? styles.atTop : ''}`} type="button" onClick={randomizeTheme} aria-label="Choose a random color theme">
             <DiceIcon />
         </button>
     );
