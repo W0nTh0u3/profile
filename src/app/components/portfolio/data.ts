@@ -78,7 +78,7 @@ export const selectedWork = [
     impact: [
       "Angular 17 to 21 upgrade",
       "Browser-only logic decoupled",
-      "Core Web Vitals and SEO",
+      "Lighthouse performance: 40 to 95",
     ],
     stack: ["Angular 21", "TypeScript", "SSR", "SEO"],
   },
@@ -87,7 +87,7 @@ export const selectedWork = [
     period: "2025 - Present",
     role: "Front-End Engineer",
     summary:
-      "Used Claude-assisted workflows to accelerate refactoring of repeated interface patterns into a cohesive component system, with manual review before integration across product screens.",
+      "Standardized repeated interface patterns into a cohesive component system across product screens, using Claude to accelerate refactoring while retaining manual architectural review and integration ownership.",
     impact: ["Shared UI building blocks", "Consistent dialog patterns", "iOS and Android coverage"],
     stack: ["Angular", "Ionic", "Capacitor", "TypeScript", "CSS"],
   },

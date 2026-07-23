@@ -4,6 +4,7 @@
     --lime: #2dd4bf;
     --aqua: #60a5fa;
     --violet: #0f766e;
+    --lime-on-paper: color-mix(in srgb, var(--ink) 55%, var(--lime));
     --muted: #9eb5c0;
 }
 

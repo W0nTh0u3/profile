@@ -97,12 +97,12 @@
     line-height: 1.45;
 }
 
-.caseDetails ul:first-child li::before {
+.impactList li::before {
     color: var(--violet);
     content: '+ ';
 }
 
-.caseDetails ul:last-child {
+.stackList {
     color: var(--muted);
 }
 
@@ -147,4 +147,5 @@
     .caseDetails {
         grid-template-columns: 1fr 1fr;
     }
+
 }

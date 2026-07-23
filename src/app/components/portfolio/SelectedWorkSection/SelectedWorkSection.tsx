@@ -21,13 +21,13 @@ export function SelectedWorkSection() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: .2 }}
                         transition={{ delay: index * .1 }}>
-                        <div className={styles.caseMeta}><span>0{index + 1}</span><span>{project.period}</span></div>
-                        <div className={styles.caseMain}><p>{project.role}</p><h3>{project.title}</h3></div>
+                        <header className={styles.caseMeta}><span>0{index + 1}</span><span>{project.period}</span></header>
+                        <hgroup className={styles.caseMain}><p>{project.role}</p><h3>{project.title}</h3></hgroup>
                         <p className={styles.summary}>{project.summary}</p>
-                        <div className={styles.caseDetails}>
-                            <ul aria-label={`${project.title} impact`}>{project.impact.map((item) => <li key={item}>{item}</li>)}</ul>
-                            <ul aria-label={`${project.title} technology stack`}>{project.stack.map((item) => <li key={item}>{item}</li>)}</ul>
-                        </div>
+                        <aside className={styles.caseDetails}>
+                            <ul className={styles.impactList} aria-label={`${project.title} impact`}>{project.impact.map((item) => <li key={item}>{item}</li>)}</ul>
+                            <ul className={styles.stackList} aria-label={`${project.title} technology stack`}>{project.stack.map((item) => <li key={item}>{item}</li>)}</ul>
+                        </aside>
                     </motion.li>
                 ))}
             </ol>

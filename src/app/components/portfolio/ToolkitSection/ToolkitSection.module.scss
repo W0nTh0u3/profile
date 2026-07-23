@@ -40,7 +40,7 @@
 
 .toolCloud li:hover {
     animation: toolkit-shake .1s linear 2;
-    color: var(--lime);
+    color: var(--lime-on-paper);
 }
 
 .massive {
@@ -58,7 +58,7 @@
 }
 
 .outline:hover {
-    -webkit-text-stroke-color: var(--lime);
+    -webkit-text-stroke-color: var(--lime-on-paper);
     color: transparent;
 }
 
