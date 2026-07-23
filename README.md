@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ryan Verzo Portfolio
 
-## Getting Started
+Personal portfolio for Ryan Verzo, a full-stack software engineer based in Manila, Philippines.
 
-First, run the development server:
+The site presents selected work across commerce, mobile, finance, and enterprise software, with a theme-aware interactive 3D logo and responsive motion design.
+
+## Stack
+
+- Next.js 16, React 19, and TypeScript
+- Sass modules for styling
+- Framer Motion, GSAP, and React Spring for motion
+- Three.js with React Three Fiber and Drei for the interactive 3D logo
+- OpenNext and Cloudflare Workers for deployment
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Commands
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+npm run dev        # Run the local development server
+npm run build      # Create a production build
+npm run start      # Serve the production build locally
+npm run preview    # Build and preview the Cloudflare deployment locally
+npm run deploy     # Deploy to Cloudflare
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```text
+src/app/components/portfolio/  Portfolio sections, shared content, and animation logic
+src/app/components/portfolio/data.ts  Portfolio content and profile information
+public/                        Static assets, 3D model, and downloadable resume
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Content Updates
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Update portfolio copy, work history, toolkit items, contact links, and hero details in `src/app/components/portfolio/data.ts`.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Client names and sensitive implementation details are intentionally omitted from selected-work case studies.
