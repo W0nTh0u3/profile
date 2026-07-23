@@ -1,7 +1,7 @@
 import { darken } from '@/app/styles/colors';
 import SpotlightCard from '../SpotlightCard';
 
-const RESUME_NAME: string = 'Ryan Verzo - Resume FSE 2026-04';
+const RESUME_NAME: string = 'Ryan_Verzo_Resume_FSE_2026-07';
 
 export const ProfileDetails = ({ bgNumber }: { bgNumber: [string, string, string] }) => {
     return (
