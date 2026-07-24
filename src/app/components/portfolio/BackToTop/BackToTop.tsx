@@ -8,7 +8,7 @@ export function BackToTop() {
     const [isLightSurface, setIsLightSurface] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
     const [isOnContact, setIsOnContact] = useState(false);
-    const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    const scrollToTop = () => window.dispatchEvent(new CustomEvent('portfolio:scroll-to', { detail: 0 }));
 
     useEffect(() => {
         const updateSurface = () => {

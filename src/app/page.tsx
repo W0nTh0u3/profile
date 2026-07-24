@@ -7,6 +7,7 @@ import { ExperienceSection } from './components/portfolio/ExperienceSection/Expe
 import { Hero } from './components/portfolio/Hero/Hero';
 import { ScrollProgress } from './components/portfolio/ScrollProgress/ScrollProgress';
 import { SelectedWorkSection } from './components/portfolio/SelectedWorkSection/SelectedWorkSection';
+import { SmoothScroll } from './components/portfolio/SmoothScroll';
 import { ThemeController } from './components/portfolio/ThemeController';
 import { ThemeRandomizer } from './components/portfolio/ThemeRandomizer/ThemeRandomizer';
 import { ToolkitSection } from './components/portfolio/ToolkitSection/ToolkitSection';
@@ -14,6 +15,7 @@ import { ToolkitSection } from './components/portfolio/ToolkitSection/ToolkitSec
 export default function Home() {
     return (
         <main>
+            <SmoothScroll />
             <Cursor />
             <ThemeController />
             <ScrollProgress />
