@@ -36,11 +36,15 @@ export const capabilities = [
     "Full-stack product engineering",
     "SSR, REST API integration and endpoints, relational data workflows, performance, and CI/CD releases.",
   ],
-  ["03", "Complex platforms", "Commerce, finance, web, mobile, and desktop products."],
+  [
+    "03",
+    "Complex platforms",
+    "Commerce, finance, web, mobile, and desktop products.",
+  ],
 ] as const;
 
 export const profile = {
-  name: "Ryan Verzo",
+  name: "Ryan Emmanuel SJ Verzo",
   firstName: "Ryan",
   yearsExperience: "5+",
   specialty: "Full-stack",
@@ -55,15 +59,17 @@ export const profile = {
   hero: {
     showProof: false,
     availability: "Available for thoughtful work",
-    roles: ["A Developer", "A Gamer", "A Sneakerhead"],
+    roles: ["A Full-Stack Software Engineer", "A Gamer", "A Sneakerhead"],
     proofLabel: "Engineering practice",
     proofMessage: "Interfaces, systems, and releases built to last.",
   },
   about: {
-    introStart: "I build beautiful, functional web experiences that feel clear, ",
+    introStart:
+      "I build beautiful, functional web experiences that feel clear, ",
     introEmphasis: "fast",
     introEnd: ", and considered.",
-    detail: "years building modern, responsive applications. Beyond coding, games and sneaker culture keep my creativity and attention to detail sharp.",
+    detail:
+      "years building modern, responsive applications. Beyond coding, games and sneaker culture keep my creativity and attention to detail sharp.",
     quote: "The details people notice are often the work no one sees.",
   },
 };
@@ -88,7 +94,11 @@ export const selectedWork = [
     role: "Front-End Engineer",
     summary:
       "Standardized repeated interface patterns into a cohesive component system across product screens, using Claude to accelerate refactoring while retaining manual architectural review and integration ownership.",
-    impact: ["Shared UI building blocks", "Consistent dialog patterns", "iOS and Android coverage"],
+    impact: [
+      "Shared UI building blocks",
+      "Consistent dialog patterns",
+      "iOS and Android coverage",
+    ],
     stack: ["Angular", "Ionic", "Capacitor", "TypeScript", "CSS"],
   },
   {
@@ -97,7 +107,11 @@ export const selectedWork = [
     role: "Full-Stack Engineer",
     summary:
       "Implemented and carried end-to-end i18n support for the Thailand market launch through delivery, covering UI localization, dynamic translation handling, and localized backend endpoints.",
-    impact: ["Thailand market launch", "Dynamic translation handling", "Release deployment fixes"],
+    impact: [
+      "Thailand market launch",
+      "Dynamic translation handling",
+      "Release deployment fixes",
+    ],
     stack: ["Angular", "TypeScript", "i18n", "REST APIs", "CI/CD"],
   },
   {

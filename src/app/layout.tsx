@@ -5,13 +5,16 @@ import "./components/portfolio/portfolio.scss";
 
 export const metadata: Metadata = {
 	metadataBase: new URL(
-		process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+		process.env.NEXT_PUBLIC_SITE_URL ?? "https://resjverzo.com",
 	),
-	title: "Ryan Verzo | Software Engineer",
-	description: "Ryan Verzo is a full-stack software engineer building resilient digital products.",
+	title: "Ryan Emmanuel SJ Verzo | Full-Stack Software Engineer",
+	description: "Ryan Emmanuel SJ Verzo is a full-stack software engineer building resilient digital products.",
+	alternates: {
+		canonical: "/",
+	},
 	openGraph: {
-		title: "Ryan Verzo | Software Engineer",
-		description: "Ryan Verzo is a full-stack software engineer building resilient digital products.",
+		title: "Ryan Emmanuel SJ Verzo | Full-Stack Software Engineer",
+		description: "Ryan Emmanuel SJ Verzo is a full-stack software engineer building resilient digital products.",
 		type: "website",
 		images: [
 			{
@@ -24,8 +27,8 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Ryan Verzo | Software Engineer",
-		description: "Ryan Verzo is a full-stack software engineer building resilient digital products.",
+		title: "Ryan Emmanuel SJ Verzo | Full-Stack Software Engineer",
+		description: "Ryan Emmanuel SJ Verzo is a full-stack software engineer building resilient digital products.",
 		images: ["/logo.png"],
 	},
 	icons: {
